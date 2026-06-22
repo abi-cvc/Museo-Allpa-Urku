@@ -1,0 +1,102 @@
+:root {
+
+    /* ======= CAPA 1. Paleta de colores cruda =======
+        No usar directamente, solo para referencia      */
+    --azul-marino   : #0D2B45;
+    --azul-medio    : #1A5276;
+    --azul-glaciar  : #4A9BAF;
+    --dorado        : #E8C547;
+    --blanco-niebla : #F0F4F8;
+
+    /* ======= CAPA 2. Paleta de colores procesada =======
+                Usar directamente en el diseño              
+    ====================================================== */
+
+    /* --- Fondos --- */
+    --fondo-principal   : var(--blanco-niebla);  /* fondo del sitio */
+    --fondo-oscuro      : var(--azul-marino);     /* secciones/footer oscuros */
+    --fondo-seccion     : var(--azul-medio);      /* bloques destacados */
+    --fondo-acento      : var(--azul-glaciar);    /* tarjetas, banners decorativos */
+
+    /* --- Texto ---
+    Combinaciones verificadas (contraste AA, ≥4.5:1):
+        texto-principal sobre fondo-principal  = 13.1:1  OK
+        texto-suave     sobre fondo-principal  =  7.6:1  OK
+        texto-claro     sobre fondo-oscuro     = 13.1:1  OK
+        texto-destacado (dorado) sobre fondo-oscuro = 8.6:1 OK
+    NUNCA: dorado o glaciar como texto sobre fondo claro (ilegible) */
+    --texto-principal   : var(--azul-marino);     /* cuerpo sobre fondo claro */
+    --texto-suave       : var(--azul-medio);      /* texto secundario sobre claro */
+    --texto-claro       : var(--blanco-niebla);   /* texto sobre fondo oscuro */
+    --texto-destacado   : var(--dorado);          /* SOLO sobre fondo oscuro */
+
+    /* --- Acentos y detalles (NO para texto pequeño) --- */
+    --acento            : var(--azul-glaciar);    /* bordes, íconos, líneas */
+    --acento-fuerte     : var(--dorado);          /* llamados de atención */
+    --foco              : var(--dorado);           /* outline de foco visible */
+
+    /* ============================================
+       TIPOGRAFÍA
+       ============================================ */
+    --fuente-titulos : 'Poppins', system-ui, sans-serif;
+    --fuente-cuerpo  : 'Inter', system-ui, sans-serif;
+
+    /* Escala (en rem para que aguante el zoom 200% — criterio 1.4.4 y 1.4.10) */
+    --tam-h1   : 2.5rem;    /* 40px */
+    --tam-h2   : 2rem;      /* 32px */
+    --tam-h3   : 1.5rem;    /* 24px */
+    --tam-h4   : 1.25rem;   /* 20px */
+    --tam-base : 1rem;      /* 16px — mínimo para cuerpo */
+    --tam-small: 0.875rem;  /* 14px — mínimo absoluto */
+
+    --peso-normal : 400;
+    --peso-medio  : 600;
+    --peso-fuerte : 700;
+
+    /* Interlineado (cuerpo ≥1.5 — criterio 1.4.12 Text Spacing) */
+    --interlineado-titulos : 1.25;
+    --interlineado-cuerpo  : 1.6;
+}
+
+/* ============================================
+   REGLAS BASE — aplicadas a los elementos
+   ============================================ */
+
+body {
+    background-color: var(--fondo-principal);
+    color: var(--texto-principal);
+    font-family: var(--fuente-cuerpo);
+    font-size: var(--tam-base);
+    line-height: var(--interlineado-cuerpo);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-titulos);
+    line-height: var(--interlineado-titulos);
+    color: var(--texto-principal);
+}
+
+h1 { font-size: var(--tam-h1); font-weight: var(--peso-fuerte); }
+h2 { font-size: var(--tam-h2); font-weight: var(--peso-medio); }
+h3 { font-size: var(--tam-h3); font-weight: var(--peso-medio); color: var(--texto-suave); }
+h4 { font-size: var(--tam-h4); font-weight: var(--peso-medio); color: var(--texto-suave); }
+
+small, .texto-secundario {
+    font-size: var(--tam-small);
+    color: var(--texto-suave);
+}
+
+/* Foco visible — criterio 2.4.7 (AA). NO quitar el outline. */
+:focus-visible {
+    outline: 3px solid var(--foco);
+    outline-offset: 2px;
+}
+
+/* Respeto a preferencia de reducir movimiento — req. 6.5 */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
