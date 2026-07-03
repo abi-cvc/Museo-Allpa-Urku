@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,191 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-<body>
 
+<body>
+    <header>
+        <section class="skip-link">
+            <a href="#main"> ↓ Saltar a contenido principal</a>
+        </section>
+        <section class="header-icons">
+            <a href=""><img src="" alt="Icono de microfono"></a>
+            <a href=""><img src="" alt="Icono de accesibilidad"></a>
+        </section>
+
+    </header>
+
+    <nav class="nav-menu">
+        <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre el museo</a>
+        <a href="paramo.html">El Páramo</a>
+        <a href="colecciones.html">Colección</a>
+        <a href="exposiciones.html">Exposiciones</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <main>
+        <section class="contenedor-inicial">
+            <h4>ECOSISTEMAS DE ALTA MONTAÑA ECUATORIANA</h4>
+            <h2>Descubre la vida que nace sobre las nubes</h2>
+            <h5>El páramo andino es uno de los ecosistemas más frágiles y vitales del planeta. Explóralo, conócelo, protégelo.</h5>
+            <div class="tarjetas-inicio">
+                <a href="">Planifica tu visita</a>
+                <a href="">Ver colección</a>
+            </div>
+
+            <!--<img src="recursos/montanas_img.png" alt="Imagen decoratica de montañas">-->
+
+        </section>
+
+
+        <article class="contenedor-coleccion">
+            <h4>COLECIÓN DESTACADA</h4>
+            <H2>Especies del páramo</H2>
+
+            <figure class="coleccion-cards">
+                <section class="card-especie">
+                    <img src="recursos/CondorAndino.png" alt="Foto Cóndor andino">
+                    <h5>Cóndor andino</h5>
+                    <p>vultur grypus</p>
+                </section>
+
+                <section class="card-especie">
+                    <img src="" alt="Foto Frailejón">
+                    <h5>Frailejón</h5>
+                    <p>Espeletia pycnophylla</p>
+                </section>
+
+                <section class="card-especie">
+                    <img src="" alt="Foto Rana marsupial andina">
+                    <h5>Rana marsupial andina</h5>
+                    <p>Gastrotheca riobambae</p>
+
+                </section>
+
+            </figure>
+        </article>
+
+
+        <article class="contenedor-agenda">
+            <header class="agenda-header">
+                <h4>AGENDA</h4>
+                <h2>Exposiciones activas</h2>
+                <p class="agenda-intro">Visitas guiadas, muestras temporales y programas educativos disponibles este mes.</p>
+            </header>
+
+            <div class="agenda-grid">
+                <aside class="agenda-calendario" aria-labelledby="calendario-title">
+                    <h3 id="calendario-title">Calendario</h3>
+                    <div class="calendario-mes">
+                        <span class="mes-nombre"></span>
+                        <span class="mes-ano"></span>
+                    </div>
+                    <div class="calendario-semana" aria-hidden="true">
+                        <span>Lun</span>
+                        <span>Mar</span>
+                        <span>Mié</span>
+                        <span>Jue</span>
+                        <span>Vie</span>
+                        <span>Sáb</span>
+                        <span>Dom</span>
+                    </div>
+                    <div class="calendario-dias" role="grid"></div>
+                </aside>
+
+                <section class="agenda-lista">
+                    <article class="agenda-evento">
+                        <div class="fecha-evento">
+                            <time datetime="2026-07-08"><strong>08</strong><span>JUL</span></time>
+                        </div>
+                        <div class="evento-contenido">
+                            <h3>El agua invisible - cómo el páramo alimenta los ríos</h3>
+                            <p>Recorrido interactivo por el ciclo del agua en los ecosistemas de la alta montaña, incluye maquetas y datos hídricos reales.</p>
+                            <span class="etiqueta etiqueta-temporal">Exposición temporal</span>
+                        </div>
+                    </article>
+
+                    <article class="agenda-evento">
+                        <div class="fecha-evento fecha-infinita">
+                            <time datetime="2026-07-01"><strong>∞</strong><span>JUL</span></time>
+                        </div>
+                        <div class="evento-contenido">
+                            <h3>Flora y fauna del páramo</h3>
+                            <p>Más de 200 especies vegetales y animales documentadas con fotografía científica, distribución geográfica y usos etnobotánicos.</p>
+                            <span class="etiqueta etiqueta-permanente">Exposición permanente</span>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </article>
+
+    </main>
+
+    <footer class="footer">
+
+        <section class="footer-cont">
+            <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo-footer">
+            <p class="eslogan">Cuidar el pármo es cuidar la vida</p>
+
+            <section class="footer-links">
+                <a href="contacto.html">Contacto</a>
+                <a href="####">Declaración de Accesibilidad</a>
+                <a href="####">Política de Privacidad</a>
+                <a href="####">Términos de uso</a>
+            </section>
+            <section class="footer-direccion">
+                <p>
+
+                    Calle Pichincha S1-80 y calle Quito Lloa, Quito, Pichincha
+                </p>
+                <p>
+                    Teléfono: +593 987 654 321
+                </p>
+
+            </section>
+        </section>
+        <hr>
+        <p>© 2024 Museo Allpa Urku. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        const today = new Date();
+        const mesNombre = document.querySelector('.mes-nombre');
+        const mesAno = document.querySelector('.mes-ano');
+        const diasGrid = document.querySelector('.calendario-dias');
+
+        if (mesNombre && mesAno && diasGrid) {
+            mesNombre.textContent = monthNames[today.getMonth()];
+            mesAno.textContent = today.getFullYear();
+
+            const firstDay = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
+            const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+            const offset = (firstDay + 6) % 7; // Ajusta para iniciar el lunes
+
+            for (let i = 0; i < offset; i++) {
+                const placeholder = document.createElement('span');
+                placeholder.className = 'dia vacio';
+                diasGrid.appendChild(placeholder);
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const dia = document.createElement('span');
+                dia.className = 'dia';
+                dia.textContent = day;
+                if (day === today.getDate()) {
+                    dia.classList.add('hoy');
+                    dia.setAttribute('aria-current', 'date');
+                }
+                diasGrid.appendChild(dia);
+            }
+        }
+    </script>
 </body>
+
 </html>
