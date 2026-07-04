@@ -5,6 +5,7 @@
     --azul-marino   : #0D2B45;
     --azul-medio    : #1A5276;
     --azul-glaciar  : #4A9BAF;
+    --celeste-claro : #93C6D2;
     --dorado        : #E8C547;
     --blanco-niebla : #F0F4F8;
     --gris-claro    : #E5E5E5;
@@ -369,6 +370,7 @@ small, .texto-secundario {
     background-color: rgba(74, 155, 175, 0.16);
     color: var(--azul-glaciar);
 }
+
 /* Visitas--------------------------------------------------------------------*/
 .contenedor-visitas{
     background-color: var(--fondo-oscuro);
@@ -603,4 +605,139 @@ footer a{
     .dia {
         min-height: 34px;
     }
+}
+
+
+/* SOBRE NOSOTROS --------------------------------------------------------------------*/
+/*mision y vision*/
+
+.contenedor-vision{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+.card-vision{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 20px auto;
+    justify-items: center;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.card-vision p{
+    max-width: 500px;
+    text-align: justify;   
+}
+
+.card-vision video{
+    display: block;
+}
+
+/* Numeros --------------------------------------------------------------------*/
+.contenedor-numeros{
+    padding: 50px;
+    background-color: var(--fondo-gris);
+}
+
+.contenedor-card-numeros{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.card-numero{
+    background-color: var(--fondo-principal);
+    border: solid 1px var(--azul-marino);
+    border-radius: 20px;
+    text-align: center;
+    margin: 20px;
+    height: 150px;
+    padding: 10px;
+}
+
+/* Línea de tiempo ----------------------------------------------------------*/
+
+.linea-tiempo{
+    position: relative;
+    padding: 36px 24px 36px 160px;
+    background: transparent;
+}
+
+.linea-tiempo::before{
+    content: '';
+    position: absolute;
+    left: 110px;
+    top: 24px;
+    bottom: 24px;
+    width: 3px;
+    background: var(--acento);
+    opacity: 0.18;
+    border-radius: 2px;
+}
+
+.linea-tiempo .timeline{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-item{
+    position: relative;
+    margin-bottom: 36px;
+}
+
+.timeline-item::before{
+    content: '';
+    position: absolute;
+    left: 102px;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    background: var(--azul-medio);
+    border-radius: 50%;
+    box-shadow: 0 6px 12px rgba(13,43,69,0.12);
+    border: 4px solid var(--fondo-principal);
+}
+
+.timeline-year{
+    position: absolute;
+    left: 0;
+    width: 96px;
+    text-align: right;
+    font-weight: var(--peso-fuerte);
+    color: var(--azul-medio);
+    font-size: 1rem;
+}
+
+.timeline-content{
+    margin-left: 180px;
+}
+
+.timeline-content h3{
+    margin: 0 0 8px 0;
+    font-size: var(--tam-h4);
+    color: var(--azul-marino);
+}
+
+.timeline-content p{
+    margin: 0 0 6px 0;
+    color: var(--texto-suave);
+}
+
+.timeline-highlight{
+    margin-top: 8px;
+    font-weight: var(--peso-fuerte);
+    color: var(--azul-marino);
+}
+
+/* Responsive: timeline stacks on small screens */
+@media (max-width: 860px){
+    .linea-tiempo{ padding-left: 20px; }
+    .linea-tiempo::before{ left: 20px; }
+    .timeline-item::before{ left: 12px; }
+    .timeline-year{ position: relative; width: auto; text-align: left; margin-bottom: 6px; color: var(--azul-medio); }
+    .timeline-content{ margin-left: 0; padding-left: 36px; }
 }
