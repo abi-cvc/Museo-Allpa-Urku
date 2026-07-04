@@ -768,3 +768,297 @@ footer a{
     border: solid 1px var(--azul-marino);
     border-radius: 10px;
 }
+
+/* Carrusel Aliados----------------------------------------*/
+
+.carrusel-contenedor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  background: var(--blanco-niebla);
+  border-radius: 12px;
+}
+
+.carrusel-viewport {
+  overflow: hidden;
+  flex: 1;
+}
+
+.carrusel-track {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: transform 0.4s ease;
+}
+
+.carrusel-item {
+  flex: 0 0 calc(100% / 3); /* muestra 3 items a la vez */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.carrusel-item img {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.carrusel-flecha {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: #5b9bd5;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.carrusel-flecha:hover {
+  color: #2b6cb0;
+}
+
+/* Responsive: sección Sobre nosotros */
+@media (max-width: 1120px) {
+    .card-vision {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-vision p {
+        max-width: none;
+        text-align: left;
+    }
+
+    .contenedor-card-numeros,
+    .valores-card {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 860px) {
+    .contenedor-vision,
+    .contenedor-numeros,
+    .contenedor-historia,
+    .contenedor-valores {
+        padding: 30px 20px;
+        margin-left: 0;
+    }
+
+    .contenedor-vision {
+        margin-top: 30px;
+    }
+
+    .card-vision {
+        margin: 0;
+    }
+
+    .card-vision video {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-numero {
+        margin: 10px 0;
+        min-height: 150px;
+        height: auto;
+    }
+
+    .contenedor-card-numeros,
+    .valores-card {
+        grid-template-columns: 1fr;
+        margin: 0;
+        padding: 0;
+    }
+
+    .valores-card section {
+        margin: 10px 0;
+    }
+
+    .carrusel-contenedor {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .carrusel-item {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contenedor-vision {
+        margin-left: 0;
+        margin-top: 24px;
+    }
+
+    .card-vision {
+        gap: 16px;
+    }
+
+    .carrusel-item {
+        flex-basis: 100%;
+    }
+
+    .carrusel-flecha {
+        display: none;
+    }
+}
+
+/* Diseños el paramo ----------------------------------------------*/
+.contenedor-caracteristicas{
+    padding: 50px;
+    background: var(--fondo-gris);
+}
+
+.contenedor-zonificaicion{
+    background: var(--fondo-principal);
+    margin: 50px;
+}
+
+.zonificacion-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tab-zona{
+    margin: 20px;
+    text-align: center;
+    background: var(--fondo-principal);
+    color: var(--azul-marino);
+    border-radius: 15px;
+    border: solid 1px var(--azul-marino);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.tab-zona.activa{
+    background: var(--azul-marino);
+    color: var(--blanco-niebla);
+}
+
+.tab-zona:hover{
+    color: var(--azul-marino);
+    background: var(--dorado);
+}
+
+/* Panel de detalle */
+.zonificacion-detalle{
+    margin: 50px;
+    padding: 30px;
+    border: 1px solid var(--azul-marino);
+    border-radius: 15px;
+}
+
+.zonificacion-detalle__cabecera{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.zonificacion-badge{
+    border: 1px solid currentColor;
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.zonificacion-detalle__cuerpo{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+
+.zonificacion-dato{
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.zonificacion-dato__valor{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.zonificacion-descripcion{
+    margin-top: 16px;
+}
+
+.zonificacion-especies__titulo{
+
+    font-weight: 600;
+}
+
+.zonificacion-tags{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+}
+
+.zonificacion-tags li{
+    border: 1px solid currentColor;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 1120px) {
+    .zonificacion-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .zonificacion-detalle__cuerpo {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 860px) {
+    .contenedor-zonificaicion {
+        margin: 20px;
+    }
+
+    .zonificacion-card {
+        grid-template-columns: 1fr;
+    }
+
+    .tab-zona {
+        margin: 10px 0;
+    }
+
+    .zonificacion-detalle {
+        margin: 20px 0;
+        padding: 20px;
+    }
+
+    .zonificacion-detalle__cabecera {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .zonificacion-detalle {
+        padding: 16px;
+    }
+
+    .zonificacion-dato {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .zonificacion-dato__valor {
+        font-size: 1.5rem;
+    }
+}
