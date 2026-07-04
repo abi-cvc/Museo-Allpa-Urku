@@ -660,6 +660,12 @@ footer a{
 
 /* Línea de tiempo ----------------------------------------------------------*/
 
+.contenedor-historia{
+    padding: 50px;
+    background-color: var(--fondo-principal);
+}
+
+
 .linea-tiempo{
     position: relative;
     padding: 36px 24px 36px 160px;
@@ -692,7 +698,6 @@ footer a{
 .timeline-item::before{
     content: '';
     position: absolute;
-    left: 102px;
     top: 6px;
     width: 18px;
     height: 18px;
@@ -740,4 +745,26 @@ footer a{
     .timeline-item::before{ left: 12px; }
     .timeline-year{ position: relative; width: auto; text-align: left; margin-bottom: 6px; color: var(--azul-medio); }
     .timeline-content{ margin-left: 0; padding-left: 36px; }
+}
+
+
+/* Valores contenedor----------------------------------------*/
+.contenedor-valores{
+    background: var(--fondo-gris);
+    padding: 50px;
+}
+
+.valores-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 20px;
+    padding: 20px;
+}
+
+.valores-card section{
+    margin: 20px;
+    padding: 20px;
+    background: var(--fondo-principal);
+    border: solid 1px var(--azul-marino);
+    border-radius: 10px;
 }
