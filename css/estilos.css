@@ -181,6 +181,7 @@ small, .texto-secundario {
 .contenedor-inicial h5{
     color: var(--azul-glaciar);
     text-align: center;
+    padding-bottom: 30px;
 }
 
 
@@ -196,7 +197,8 @@ small, .texto-secundario {
     border: solid 1px var(--blanco-niebla);
     color: var(--blanco-niebla);
     text-align: center;
-    margin: 30px;
+    
+    margin:0 30px 30px 30px;
     border-radius: 20px;
     padding: 10px;
     width: 200px;
