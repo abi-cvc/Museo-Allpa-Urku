@@ -12,6 +12,7 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
+<base target="_blank">
 </head>
 
 <body>
@@ -155,39 +156,7 @@
         <p>© 2024 Museo Allpa Urku. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        const today = new Date();
-        const mesNombre = document.querySelector('.mes-nombre');
-        const mesAno = document.querySelector('.mes-ano');
-        const diasGrid = document.querySelector('.calendario-dias');
-
-        if (mesNombre && mesAno && diasGrid) {
-            mesNombre.textContent = monthNames[today.getMonth()];
-            mesAno.textContent = today.getFullYear();
-
-            const firstDay = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
-            const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-            const offset = (firstDay + 6) % 7; // Ajusta para iniciar el lunes
-
-            for (let i = 0; i < offset; i++) {
-                const placeholder = document.createElement('span');
-                placeholder.className = 'dia vacio';
-                diasGrid.appendChild(placeholder);
-            }
-
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dia = document.createElement('span');
-                dia.className = 'dia';
-                dia.textContent = day;
-                if (day === today.getDate()) {
-                    dia.classList.add('hoy');
-                    dia.setAttribute('aria-current', 'date');
-                }
-                diasGrid.appendChild(dia);
-            }
-        }
-    </script>
+        <script src="js/script.js"></script>
 </body>
 
 </html>
