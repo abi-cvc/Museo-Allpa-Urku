@@ -4,97 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exposiciones | Museo Allpa Urku</title>
+    <title>Inicio | Museo Allpa Urku</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Italianno&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <header>
-        <section class="skip-link">
-            <a href="#main"> ↓ Saltar a contenido principal</a>
-        </section>
-        <section class="header-icons">
-            <a href=""><img src="/recursos/icons/microphone.svg" alt="Icono de microfono"></a>
-            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Icono de accesibilidad"></a>
-            <!-- Aquí especificar idioma -->
-        </section>
+    <div class="skip-link">
+        <a href="#main">↓ Saltar a contenido principal</a>
+    </div>
 
+    <header>
+        <div class="header-icons" aria-label="Herramientas de accesibilidad">
+            <a href="#" aria-label="Activar lectura en voz alta">
+                <img src="/recursos/icons/microphone.svg" alt="" aria-hidden="true">
+            </a>
+            <a href="#" aria-label="Opciones de accesibilidad">
+                <img src="/recursos/icons/icon_accesibilidad.svg" alt="" aria-hidden="true">
+            </a>
+        </div>
     </header>
 
-    <nav class="nav-menu">
-        <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
-        <a href="index.html">Inicio</a>
+    <nav class="nav-menu" aria-label="Menú principal">
+        <a href="index.html" class="nav-logo-link" aria-label="Museo Allpa Urku — Ir al inicio">
+            <img src="/recursos/logo-museo.svg" alt="" aria-hidden="true" class="logo">
+        </a>
+        <a href="index.html" aria-current="page">Inicio</a>
         <a href="nosotros.html">Sobre el museo</a>
         <a href="paramo.html">El Páramo</a>
-        <a href="colecciones.html">Colección</a>
+        <a href="recursos.html">Colección</a>
         <a href="exposiciones.html">Exposiciones</a>
         <a href="contacto.html">Contacto</a>
     </nav>
 
-    <main>
+    <main id="main">
+
         <section class="contenedor-inicial">
-            <h4>ECOSISTEMAS DE ALTA MONTAÑA ECUATORIANA</h4>
-            <h2>Descubre la vida que nace sobre las nubes</h2>
-            <h5>El páramo andino es uno de los ecosistemas más frágiles y vitales del planeta. Explóralo, conócelo, protégelo.</h5>
+            <p class="supertitulo">ECOSISTEMAS DE ALTA MONTAÑA ECUATORIANA</p>
+            <h1>Descubre la vida que nace sobre las nubes</h1>
+            <p class="subtitulo-hero">El páramo andino es uno de los ecosistemas más frágiles y vitales del planeta. Explóralo, conócelo, protégelo.</p>
             <div class="tarjetas-inicio">
-                <a href="">Planifica tu visita</a>
-                <a href="">Ver colección</a>
+                <a href="visitas.html">Planifica tu visita</a>
+                <a href="recursos.html">Ver colección</a>
             </div>
-
-            <img src="recursos/montanas_img.png" alt="Imagen decorativa de montañas">
-
+            <img src="recursos/montanas_img.png" alt="" role="presentation">
         </section>
 
 
         <article class="contenedor-coleccion">
-            <h4>COLECIÓN DESTACADA</h4>
-            <H2>Especies del páramo</H2>
+            <p class="supertitulo">COLECCIÓN DESTACADA</p>
+            <h2>Especies del páramo</h2>
 
-            <figure class="coleccion-cards">
-                <section class="card-especie">
-                    <img src="recursos/inicio/CondorAndino.png" alt="Foto Cóndor andino">
-                    <h5>Cóndor andino</h5>
-                    <p>vultur grypus</p>
-                </section>
-
-                <section class="card-especie">
-                    <img src="recursos/inicio/Frailejon.png" alt="Foto Frailejón">
-                    <h5>Frailejón</h5>
-                    <p>Espeletia pycnophylla</p>
-                </section>
-
-                <section class="card-especie">
-                    <img src="recursos/inicio/RanaMarsupialAndina.png" alt="Foto Rana marsupial andina">
-                    <h5>Rana marsupial andina</h5>
-                    <p>Gastrotheca riobambae</p>
-
-                </section>
-
-            </figure>
+            <ul class="coleccion-cards">
+                <li>
+                    <article class="card-especie">
+                        <img src="recursos/inicio/CondorAndino.png" alt="Cóndor andino fotografiado en hábitat natural">
+                        <h3>Cóndor andino</h3>
+                        <p><span class="sr-only">Nombre científico: </span><em>Vultur gryphus</em></p>
+                    </article>
+                </li>
+                <li>
+                    <article class="card-especie">
+                        <img src="recursos/inicio/Frailejon.png" alt="Campo de frailejones en el páramo andino">
+                        <h3>Frailejón</h3>
+                        <p><span class="sr-only">Nombre científico: </span><em>Espeletia pycnophylla</em></p>
+                    </article>
+                </li>
+                <li>
+                    <article class="card-especie">
+                        <img src="recursos/inicio/RanaMarsupialAndina.png" alt="Rana marsupial andina sobre una hoja">
+                        <h3>Rana marsupial andina</h3>
+                        <p><span class="sr-only">Nombre científico: </span><em>Gastrotheca riobambae</em></p>
+                    </article>
+                </li>
+            </ul>
         </article>
 
 
         <article class="contenedor-agenda">
             <header class="agenda-header">
-                <h4>AGENDA</h4>
+                <p class="supertitulo">AGENDA</p>
                 <h2>Exposiciones activas</h2>
                 <p class="agenda-intro">Visitas guiadas, muestras temporales y programas educativos disponibles este mes.</p>
             </header>
 
             <div class="agenda-grid">
-                <section class="agenda-lista">
+                <div class="agenda-lista">
                     <article class="agenda-evento">
                         <div class="fecha-evento">
-                            <time datetime="2026-07-08"><strong>08</strong><span>JUL</span></time>
+                            <time datetime="2026-07-08">
+                                <strong>08</strong>
+                                <span aria-hidden="true">JUL</span>
+                            </time>
                         </div>
                         <div class="evento-contenido">
-                            <h3>El agua invisible - cómo el páramo alimenta los ríos</h3>
+                            <h3>El agua invisible — cómo el páramo alimenta los ríos</h3>
                             <p>Recorrido interactivo por el ciclo del agua en los ecosistemas de la alta montaña, incluye maquetas y datos hídricos reales.</p>
                             <span class="etiqueta etiqueta-temporal">Exposición temporal</span>
                         </div>
@@ -102,7 +111,10 @@
 
                     <article class="agenda-evento">
                         <div class="fecha-evento fecha-infinita">
-                            <time datetime="2026-07-01"><strong>∞</strong><span>JUL</span></time>
+                            <time datetime="2026-07-01" aria-label="Exposición permanente, julio 2026">
+                                <strong aria-hidden="true">∞</strong>
+                                <span aria-hidden="true">JUL</span>
+                            </time>
                         </div>
                         <div class="evento-contenido">
                             <h3>Flora y fauna del páramo</h3>
@@ -110,49 +122,41 @@
                             <span class="etiqueta etiqueta-permanente">Exposición permanente</span>
                         </div>
                     </article>
-                </section>
+                </div>
             </div>
         </article>
 
+
         <article class="contenedor-visitas">
-            <h3>Vista el Museo Allpa Urku</h3>
-
-            <h5>Abierto de martes a domingo: 10:00h a 18:00h</h5>
-            
-            <h5>Acceso inclusivo para personas con movilidad reducida</h5>
-            
-            <a href="####3">Comprar entradas</a>
-
-            <h5>Desde $4 - Entrada gratuita para niños menores de 5 años</h5>
+            <h2>Visita el Museo Allpa Urku</h2>
+            <p>Abierto de martes a domingo: 10:00 a 18:00</p>
+            <p>Acceso inclusivo para personas con movilidad reducida</p>
+            <a href="exposiciones.html">Comprar entradas</a>
+            <p>Desde $4 · Entrada gratuita para niños menores de 5 años</p>
         </article>
 
     </main>
 
     <footer class="footer">
+        <div class="footer-cont">
+            <a href="index.html" class="nav-logo-link" aria-label="Museo Allpa Urku — Inicio">
+                <img src="/recursos/logo-museo.svg" alt="" aria-hidden="true" class="logo-footer">
+            </a>
+            <p class="eslogan">Cuidar el páramo es cuidar la vida</p>
 
-        <section class="footer-cont">
-            <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo-footer">
-            <p class="eslogan">Cuidar el pármo es cuidar la vida</p>
-
-            <section class="footer-links">
+            <nav class="footer-links" aria-label="Pie de página">
                 <a href="contacto.html">Contacto</a>
-                <a href="####">Declaración de Accesibilidad</a>
-                <a href="####">Política de Privacidad</a>
-                <a href="####">Términos de uso</a>
-            </section>
-            <section class="footer-direccion">
-                <p>
-
-                    Calle Pichincha S1-80 y calle Quito Lloa, Quito, Pichincha
-                </p>
-                <p>
-                    Teléfono: +593 987 654 321
-                </p>
-
-            </section>
-        </section>
+                <a href="declaracion-acc.html">Declaración de Accesibilidad</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de uso</a>
+            </nav>
+            <address class="footer-direccion">
+                <p>Calle Pichincha S1-80 y calle Quito Lloa, Quito, Pichincha</p>
+                <p>Teléfono: <a href="tel:+593987654321">+593 987 654 321</a></p>
+            </address>
+        </div>
         <hr>
-        <p>© 2024 Museo Allpa Urku. Todos los derechos reservados.</p>
+        <p>© 2026 Museo Allpa Urku. Todos los derechos reservados.</p>
     </footer>
 
     <script>
@@ -168,7 +172,7 @@
 
             const firstDay = new Date(today.getFullYear(), today.getMonth(), 1).getDay();
             const daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
-            const offset = (firstDay + 6) % 7; // Ajusta para iniciar el lunes
+            const offset = (firstDay + 6) % 7;
 
             for (let i = 0; i < offset; i++) {
                 const placeholder = document.createElement('span');

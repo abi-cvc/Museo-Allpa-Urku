@@ -4,100 +4,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre nosotros | Museo Allpa Urku</title>
+    <title>Sobre el museo | Museo Allpa Urku</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Italianno&family=Poppins:wght@600;700&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
 <body>
-    <header>
-        <section class="skip-link">
-            <a href="#main"> ↓ Saltar a contenido principal</a>
-        </section>
-        <section class="header-icons">
-            <a href=""><img src="/recursos/icons/microphone.svg" alt="Icono de microfono"></a>
-            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Icono de accesibilidad"></a>
-            <!-- Aquí especificar idioma -->
-        </section>
+    <div class="skip-link">
+        <a href="#main">↓ Saltar a contenido principal</a>
+    </div>
 
+    <header>
+        <div class="header-icons" aria-label="Herramientas de accesibilidad">
+            <a href="#" aria-label="Activar lectura en voz alta">
+                <img src="/recursos/icons/microphone.svg" alt="" aria-hidden="true">
+            </a>
+            <a href="#" aria-label="Opciones de accesibilidad">
+                <img src="/recursos/icons/icon_accesibilidad.svg" alt="" aria-hidden="true">
+            </a>
+        </div>
     </header>
 
-    <nav class="nav-menu">
-        <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
+    <nav class="nav-menu" aria-label="Menú principal">
+        <a href="index.html" class="nav-logo-link" aria-label="Museo Allpa Urku — Ir al inicio">
+            <img src="/recursos/logo-museo.svg" alt="" aria-hidden="true" class="logo">
+        </a>
         <a href="index.html">Inicio</a>
-        <a href="nosotros.html">Sobre el museo</a>
+        <a href="nosotros.html" aria-current="page">Sobre el museo</a>
         <a href="paramo.html">El Páramo</a>
-        <a href="colecciones.html">Colección</a>
+        <a href="recursos.html">Colección</a>
         <a href="exposiciones.html">Exposiciones</a>
         <a href="contacto.html">Contacto</a>
     </nav>
 
-    <main>
+    <main id="main">
 
         <section class="contenedor-inicial">
-            <h4>SOBRE EL MUSEO</h4>
-            <h2>GUARDIANES DEL PÁRAMO ANDINO</h2>
-            <h5>Somos un espacio dedicado a la investigación, conservación y divulgación del ecosistema del pármo del
-                Ecuador</h5>
+            <p class="supertitulo">SOBRE EL MUSEO</p>
+            <h1>GUARDIANES DEL PÁRAMO ANDINO</h1>
+            <p class="subtitulo-hero">Somos un espacio dedicado a la investigación, conservación y divulgación del ecosistema del páramo del Ecuador</p>
         </section>
 
         <article class="contenedor-vision">
-            <h4>MISION Y VISIÓN</h4>
+            <p class="supertitulo">MISIÓN Y VISIÓN</p>
             <h2>¿Por qué existimos?</h2>
-            <section class="card-vision">
+            <div class="card-vision">
                 <p>El Museo Allpa nace de la convicción de saber que la conservación del páramo empieza por conocerlo.
-                    Somos
-                    un puente entre la ciencia ya la ciudadanía, donde los datos del campo científico se conviernen en
+                    Somos un puente entre la ciencia y la ciudadanía, donde los datos del campo científico se convierten en
                     experiencias que inspiran.
-
                     Nuestra misión es ser el referente nacional en educación y conservación de los ecosistemas de la
-                    alta
-                    montaña, contribuyendo de forma activa en su protección.</p>
+                    alta montaña, contribuyendo de forma activa en su protección.</p>
 
-                <video width="520" height="320" controls>
-                    <source src="tu-video.mp4" type="video/mp4">
-                    Nuestra misión.
-                </video>
-            </section>
+                <figure>
+                    <video width="520" height="320" controls>
+                        <source src="tu-video.mp4" type="video/mp4">
+                        <track kind="captions" src="captions-mision.vtt" srclang="es" label="Español">
+                    </video>
+                    <figcaption>Nuestra misión en Lengua de Señas Ecuatoriana (LSE)</figcaption>
+                </figure>
+            </div>
         </article>
 
         <article class="contenedor-numeros">
-            <h4>EL MUSEO EN NÚMEROS</h4>
-            <h2>Nuestra Trayectoria</h2>
-            <section class="contenedor-card-numeros">
-                <section class="card-numero">
-                    <h4>+4000</h4>
+            <p class="supertitulo">EL MUSEO EN NÚMEROS</p>
+            <h2>Nuestra trayectoria</h2>
+            <div class="contenedor-card-numeros">
+                <div class="card-numero">
+                    <strong class="cifra">+4.000</strong>
                     <p>metros sobre el nivel del mar</p>
-                </section>
-                <section class="card-numero">
-                    <h4>+600</h4>
+                </div>
+                <div class="card-numero">
+                    <strong class="cifra">+600</strong>
                     <p>especies registradas en colección</p>
-                </section>
-
-                <section class="card-numero">
-                    <h4>12</h4>
+                </div>
+                <div class="card-numero">
+                    <strong class="cifra">12</strong>
                     <p>exposiciones permanentes</p>
-                </section>
-
-                <section class="card-numero">
-                    <h4>35%</h4>
+                </div>
+                <div class="card-numero">
+                    <strong class="cifra">35%</strong>
                     <p>del agua dulce del Ecuador sale de aquí</p>
-                </section>
-            </section>    
+                </div>
+            </div>
         </article>
 
         <article class="contenedor-historia">
-            <h4>HISTORIA</h4>
+            <p class="supertitulo">HISTORIA</p>
             <h2>¿Cómo nació el museo?</h2>
             <section class="linea-tiempo" aria-label="Línea del tiempo de la historia del museo">
                 <ol class="timeline">
                     <li class="timeline-item">
-                        <div class="timeline-year" aria-hidden="true">2010</div>
+                        <div class="timeline-year">2010</div>
                         <div class="timeline-content">
                             <h3>Fundación del museo</h3>
                             <p>Un grupo de investigadores y educadores ambientales creó el primer espacio de divulgación sobre el páramo ecuatoriano de Quito.</p>
@@ -105,7 +107,7 @@
                     </li>
 
                     <li class="timeline-item">
-                        <div class="timeline-year" aria-hidden="true">2015</div>
+                        <div class="timeline-year">2015</div>
                         <div class="timeline-content">
                             <h3>Apertura de la colección permanente</h3>
                             <p>Inauguración de 12 salas permanentes con más de 400 especies documentadas de flora y fauna andina.</p>
@@ -113,78 +115,88 @@
                     </li>
 
                     <li class="timeline-item">
-                        <div class="timeline-year" aria-hidden="true">2026</div>
+                        <div class="timeline-year">2026</div>
                         <div class="timeline-content">
                             <h3>Colección digital y accesibilidad</h3>
-                            <p>Lanzamiento con sitio web con colección digital accesible, incorporando contenidos en LSE y audiodescripción.</p>
+                            <p>Lanzamiento del sitio web con colección digital accesible, incorporando contenidos en LSE y audiodescripción.</p>
                             <p class="timeline-highlight">+600 especies registradas</p>
                         </div>
                     </li>
                 </ol>
             </section>
-
         </article>
 
         <article class="contenedor-valores">
-            <h4>VALORES</h4>
+            <p class="supertitulo">VALORES</p>
             <h2>¿Qué nos guía?</h2>
-            <section class="valores-card">
+            <div class="valores-card">
                 <section>
-                    <h4>Conservación</h4>
+                    <h3>Conservación</h3>
                     <hr>
                     <p>Cada pieza de la colección contribuye al conocimiento científico del páramo.</p>
                 </section>
 
                 <section>
-                    <h4>Accesibilidad</h4>
+                    <h3>Accesibilidad</h3>
                     <hr>
                     <p>El conocimiento sobre el páramo debe ser accesible para todas las personas.</p>
                 </section>
 
                 <section>
-                    <h4>Educación</h4>
+                    <h3>Educación</h3>
                     <hr>
                     <p>Transformamos datos científicos en experiencias que inspiran y educan.</p>
                 </section>
 
                 <section>
-                    <h4>Comunidad</h4>
+                    <h3>Comunidad</h3>
                     <hr>
                     <p>Trabajamos junto a comunidades andinas y organizaciones de conservación.</p>
                 </section>
-                
-            </section>
+            </div>
         </article>
 
-
+        <section class="contenedor-aliados" aria-labelledby="aliados-titulo">
+            <p class="supertitulo">ALIADOS</p>
+            <h2 id="aliados-titulo">Instituciones que nos apoyan</h2>
+            <ul class="aliados-lista">
+                <li>
+                    <img src="recursos/sobreNosotros/aliado-CentroJambatu.png" alt="Centro Jambatu">
+                </li>
+                <li>
+                    <img src="recursos/sobreNosotros/aliado-MinisterioAmbiente.png" alt="Ministerio del Ambiente del Ecuador">
+                </li>
+                <li>
+                    <img src="recursos/sobreNosotros/aliado-UICN.png" alt="UICN — Plataforma de contribuciones para la naturaleza">
+                </li>
+                <li>
+                    <img src="recursos/sobreNosotros/aliado-Wikiri.png" alt="Wikiri">
+                </li>
+            </ul>
+        </section>
 
     </main>
 
     <footer class="footer">
+        <div class="footer-cont">
+            <a href="index.html" class="nav-logo-link" aria-label="Museo Allpa Urku — Inicio">
+                <img src="/recursos/logo-museo.svg" alt="" aria-hidden="true" class="logo-footer">
+            </a>
+            <p class="eslogan">Cuidar el páramo es cuidar la vida</p>
 
-        <section class="footer-cont">
-            <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo-footer">
-            <p class="eslogan">Cuidar el pármo es cuidar la vida</p>
-
-            <section class="footer-links">
+            <nav class="footer-links" aria-label="Pie de página">
                 <a href="contacto.html">Contacto</a>
-                <a href="####">Declaración de Accesibilidad</a>
-                <a href="####">Política de Privacidad</a>
-                <a href="####">Términos de uso</a>
-            </section>
-            <section class="footer-direccion">
-                <p>
-
-                    Calle Pichincha S1-80 y calle Quito Lloa, Quito, Pichincha
-                </p>
-                <p>
-                    Teléfono: +593 987 654 321
-                </p>
-
-            </section>
-        </section>
+                <a href="declaracion-acc.html">Declaración de Accesibilidad</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de uso</a>
+            </nav>
+            <address class="footer-direccion">
+                <p>Calle Pichincha S1-80 y calle Quito Lloa, Quito, Pichincha</p>
+                <p>Teléfono: <a href="tel:+593987654321">+593 987 654 321</a></p>
+            </address>
+        </div>
         <hr>
-        <p>© 2024 Museo Allpa Urku. Todos los derechos reservados.</p>
+        <p>© 2026 Museo Allpa Urku. Todos los derechos reservados.</p>
     </footer>
 
 </body>

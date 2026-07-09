@@ -10,6 +10,8 @@
     --blanco-niebla : #F0F4F8;
     --gris-claro    : #E5E5E5;
 
+    --color-foco    : #39FF14; /* verde neón para outline de foco visible — criterio 2.4.7 (AA) */
+
     /* ======= CAPA 2. Paleta de colores procesada =======
                 Usar directamente en el diseño              
     ====================================================== */
@@ -85,6 +87,47 @@ h2 { font-size: var(--tam-h2); font-weight: var(--peso-medio); }
 h3 { font-size: var(--tam-h3); font-weight: var(--peso-medio); color: var(--texto-suave); }
 h4 { font-size: var(--tam-h4); font-weight: var(--peso-medio); color: var(--texto-suave); }
 
+/* Visualmente oculto pero legible por lectores de pantalla — 1.3.1 */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Etiqueta supra (antes h4 decorativo) — semánticamente es <p> */
+.supertitulo {
+    font-family: var(--fuente-titulos);
+    font-size: var(--tam-h4);
+    font-weight: var(--peso-medio);
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+}
+
+/* Subtítulo bajo el hero — semánticamente es <p> */
+.subtitulo-hero {
+    color: var(--azul-glaciar);
+    text-align: center;
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+/* Cifra destacada en tarjetas de estadísticas */
+.cifra {
+    font-family: var(--fuente-titulos);
+    font-size: var(--tam-h2);
+    font-weight: var(--peso-fuerte);
+    color: var(--texto-principal);
+    display: block;
+}
+
 small, .texto-secundario {
     font-size: var(--tam-small);
     color: var(--texto-suave);
@@ -92,7 +135,7 @@ small, .texto-secundario {
 
 /* Foco visible — criterio 2.4.7 (AA). NO quitar el outline. */
 :focus-visible {
-    outline: 5px solid #39FF14;
+    outline: 5px solid var(--color-foco);
     outline-offset: 2px;
 }
 
@@ -125,13 +168,26 @@ small, .texto-secundario {
 }
 
 /* header - icons --------------------------------------------------------*/
+
 .header-icons {
     display: flex;
     background-color: var(--azul-glaciar);
-    padding: 10px;
-
+    padding: 5px 50px;
+    gap: 20px;
+    justify-content: flex-end;
 }
 
+.header-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icons img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
 
 
 /*Barra de navegación--------------------------------------------------------*/
@@ -155,8 +211,14 @@ small, .texto-secundario {
     height: 8%;
 }
 
-.nav-menu a:hover{
+.nav-menu a:not(.nav-logo-link):hover {
     background-color: var(--dorado);
+}
+
+.nav-logo-link {
+    display: flex;
+    align-items: center;
+    padding: 0;
 }
 
 
@@ -166,23 +228,23 @@ small, .texto-secundario {
     background: var(--azul-marino);
 }
 
-.contenedor-inicial h4{
+.contenedor-inicial .supertitulo {
     text-align: center;
     color: var(--azul-glaciar);
     padding: 20px;
     margin: 20px;
-    border: var(--azul-glaciar);
 }
 
-.contenedor-inicial h2{
+.contenedor-inicial h1,
+.contenedor-inicial h2 {
     color: var(--blanco-niebla);
     text-align: center;
 }
 
-.contenedor-inicial h5{
-    color: var(--azul-glaciar);
-    text-align: center;
-    padding-bottom: 30px;
+.contenedor-inicial img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 
@@ -220,9 +282,12 @@ small, .texto-secundario {
 
 }
 
-.coleccion-cards{
+.coleccion-cards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .card-especie{
@@ -238,14 +303,15 @@ small, .texto-secundario {
 }
 
 
-.card-especie h5{
+.card-especie h3 {
     font-size: var(--tam-h3);
+    color: var(--texto-principal);
     margin-top: 5px;
     margin-left: 10px;
     margin-bottom: 0;
 }
 
-.card-especie p{
+.card-especie p {
     font-size: var(--tam-h4);
     margin-top: 5px;
     margin-left: 10px;
@@ -361,14 +427,15 @@ small, .texto-secundario {
     font-weight: var(--peso-medio);
 }
 
+/* Contraste revisado: texto oscuro sobre fondo tenue — cumple 4.5:1 (1.4.3) */
 .etiqueta-temporal {
-    background-color: rgba(232, 197, 71, 0.12);
-    color: var(--dorado);
+    background-color: rgba(232, 197, 71, 0.15);
+    color: #7a6200;
 }
 
 .etiqueta-permanente {
-    background-color: rgba(74, 155, 175, 0.16);
-    color: var(--azul-glaciar);
+    background-color: rgba(74, 155, 175, 0.15);
+    color: var(--azul-medio);
 }
 
 /* Visitas--------------------------------------------------------------------*/
@@ -377,38 +444,24 @@ small, .texto-secundario {
     padding: 50px;
 }
 
-.contenedor-visitas h3{
+.contenedor-visitas h2 {
     color: var(--texto-claro);
     text-align: center;
 }
 
-.contenedor-visitas h5{
+.contenedor-visitas p {
     color: var(--acento);
     text-align: center;
 }
 
-.contenedor-visitas a{
+.contenedor-visitas a {
     display: block;
     width: fit-content;
     margin: 20px auto;
-
     background-color: var(--fondo-principal);
     padding: 10px 20px;
     text-decoration: none;
-    color: var(--texto-ocuro);
-    border-radius: 20px;
-    border: solid 1px var(--azul-marino);
-}
-
-.contenedor-visitas a{
-    display: block;
-    width: fit-content;
-    margin: 20px auto;
-
-    background-color: var(--fondo-principal);
-    padding: 10px 20px;
-    text-decoration: none;
-    color: var(--texto-ocuro);
+    color: var(--texto-principal);
     border-radius: 20px;
     border: solid 1px var(--azul-marino);
 }
@@ -466,9 +519,15 @@ footer a{
     margin-left: 50px;
 }
 
-.footer-direccion{
+.footer-direccion {
     display: inline;
     text-align: left;
+    font-style: normal;
+}
+
+.footer-direccion a {
+    color: var(--azul-marino);
+    text-decoration: none;
 }
 
 /* Responsive ----------------------------------------------------------------*/
@@ -626,9 +685,9 @@ footer a{
     gap: 30px;
 }
 
-.card-vision p{
+.card-vision p {
     max-width: 500px;
-    text-align: justify;   
+    text-align: left;
 }
 
 .card-vision video{
@@ -767,6 +826,36 @@ footer a{
     background: var(--fondo-principal);
     border: solid 1px var(--azul-marino);
     border-radius: 10px;
+}
+
+/* h3 en valores-card mantiene tamaño visual de h4 (semánticamente correcto como h3) */
+.valores-card h3 {
+    font-size: var(--tam-h4);
+    color: var(--texto-principal);
+}
+
+/* Sección aliados -------------------------------------------*/
+.contenedor-aliados {
+    padding: 50px;
+    background: var(--fondo-principal);
+    text-align: center;
+}
+
+.aliados-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+}
+
+.aliados-lista img {
+    max-height: 80px;
+    max-width: 160px;
+    object-fit: contain;
 }
 
 /* Carrusel Aliados----------------------------------------*/
