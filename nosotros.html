@@ -88,7 +88,7 @@
                     <h4>35%</h4>
                     <p>del agua dulce del Ecuador sale de aquí</p>
                 </section>
-            </section>    
+            </section>
         </article>
 
         <article class="contenedor-historia">
@@ -100,7 +100,8 @@
                         <div class="timeline-year" aria-hidden="true">2010</div>
                         <div class="timeline-content">
                             <h3>Fundación del museo</h3>
-                            <p>Un grupo de investigadores y educadores ambientales creó el primer espacio de divulgación sobre el páramo ecuatoriano de Quito.</p>
+                            <p>Un grupo de investigadores y educadores ambientales creó el primer espacio de divulgación
+                                sobre el páramo ecuatoriano de Quito.</p>
                         </div>
                     </li>
 
@@ -108,7 +109,8 @@
                         <div class="timeline-year" aria-hidden="true">2015</div>
                         <div class="timeline-content">
                             <h3>Apertura de la colección permanente</h3>
-                            <p>Inauguración de 12 salas permanentes con más de 400 especies documentadas de flora y fauna andina.</p>
+                            <p>Inauguración de 12 salas permanentes con más de 400 especies documentadas de flora y
+                                fauna andina.</p>
                         </div>
                     </li>
 
@@ -116,7 +118,8 @@
                         <div class="timeline-year" aria-hidden="true">2026</div>
                         <div class="timeline-content">
                             <h3>Colección digital y accesibilidad</h3>
-                            <p>Lanzamiento con sitio web con colección digital accesible, incorporando contenidos en LSE y audiodescripción.</p>
+                            <p>Lanzamiento con sitio web con colección digital accesible, incorporando contenidos en LSE
+                                y audiodescripción.</p>
                             <p class="timeline-highlight">+600 especies registradas</p>
                         </div>
                     </li>
@@ -152,11 +155,46 @@
                     <hr>
                     <p>Trabajamos junto a comunidades andinas y organizaciones de conservación.</p>
                 </section>
-                
+
             </section>
         </article>
 
+        <section class="carrusel-contenedor" role="region" aria-label="Aliados y colaboradores">
+            <button class="carrusel-flecha carrusel-flecha--izq" aria-label="Ver logo anterior">&#10094;</button>
 
+            <div class="carrusel-viewport">
+                <ul class="carrusel-track" aria-live="polite">
+                    <li class="carrusel-item"><img src="recursos/sobreNosotros/aliado-CentroJambatu.png" alt="Centro Jambatu"></li>
+                    <li class="carrusel-item"><img src="recursos/sobreNosotros/aliado-MinisterioAmbiente.png" alt="Ministerio del Ambiente"></li>
+                    <li class="carrusel-item"><img src="recursos/sobreNosotros/aliado-UICN.png" alt="UICN"></li>
+                    <li class="carrusel-item"><img src="recursos/sobreNosotros/aliado-Wikiri.png" alt="Wikiri"></li>
+                </ul>
+            </div>
+
+            <button class="carrusel-flecha carrusel-flecha--der" aria-label="Ver logo siguiente">&#10095;</button>
+        </section>
+        <script>
+            (function () {
+                const track = document.querySelector('.carrusel-track');
+                const items = document.querySelectorAll('.carrusel-item');
+                const total = items.length;
+                let index = 0;
+
+                function actualizar() {
+                    track.style.transform = `translateX(-${index * (100 / 3)}%)`;
+                }
+
+                document.querySelector('.carrusel-flecha--der').addEventListener('click', () => {
+                    index = (index + 1) % total;
+                    actualizar();
+                });
+
+                document.querySelector('.carrusel-flecha--izq').addEventListener('click', () => {
+                    index = (index - 1 + total) % total;
+                    actualizar();
+                });
+            })();
+        </script>
 
     </main>
 
