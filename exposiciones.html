@@ -1,17 +1,524 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Exposiciones | Museo Allpa Urku</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
+    
 </head>
+
 <body>
 
+    <header>
+
+        <section class="skip-link">
+            <a href="#main">
+                ↓ Saltar a contenido principal
+            </a>
+        </section>
+
+        <section class="header-icons">
+
+            <a href="#">
+                <img src="recursos/icons/microphone.svg" alt="Asistente por voz">
+            </a>
+
+            <a href="#">
+                <img src="recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad">
+            </a>
+
+        </section>
+
+    </header>
+
+
+    <nav class="nav-menu" aria-label="Menú principal">
+
+        <img src="recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
+
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre el museo</a>
+        <a href="paramo.html">El Páramo</a>
+        <a href="colecciones.html">Colección</a>
+        <a href="exposiciones.html" aria-current="page">
+            Exposiciones
+        </a>
+        <a href="contacto.html">Contacto</a>
+
+    </nav>
+
+
+
+    <main id="main">
+
+        <section class="contenedor-inicial">
+            <h4>EXPOSICIONES</h4>
+            <h2>Descubre nuestras salas</h2>
+            <h5>Exposiciones permanentes y temporales sobre el páramo andino, su biodiversidad y su importancia para el
+                Ecuador.</h5>
+        </section>
+
+        <section class="contenedor-pestanas">
+
+                <button id="tab-exposiciones" class="boton-pestaña active" role="tab" aria-selected="true"
+                    aria-controls="panel-exposiciones">
+
+                    Exposiciones
+
+                </button>
+
+                <button id="tab-horarios" class="boton-pestaña" role="tab" aria-selected="false"
+                    aria-controls="panel-horarios">
+
+                    Horarios y precios
+
+                </button>
+
+                <button id="tab-comprar" class="boton-pestaña" role="tab" aria-selected="false"
+                    aria-controls="panel-comprar">
+
+                    Comprar entradas
+
+                </button>
+
+        </section>
+
+
+        <!-- PANEL 1 -->
+
+        <section id="panel-exposiciones" class="tab-panel" role="tabpanel" aria-labelledby="tab-exposiciones">
+
+            <header>
+
+                <h4>EXPOSICIÓN ESPECIAL</h4>
+
+                <h2>Exposición temporal destacada</h2>
+
+            </header>
+
+
+            <article class="exposicion-destacada">
+
+                <aside class="fecha">
+
+                    <span>08</span>
+
+                    <span>JUL</span>
+
+                </aside>
+
+
+                <section>
+
+                    <h3>
+
+                        El agua invisible - cómo el páramo alimenta los ríos
+
+                    </h3>
+
+                    <p>
+
+                        Un recorrido sensorial e interactivo por el ciclo del agua
+                        en los ecosistemas de alta montaña. Maquetas a escala,
+                        datos hidrológicos y una instalación inmersiva.
+
+                    </p>
+
+                    <footer>
+
+                        <small>Sala 3 · Piso 2</small>
+
+                        <button onclick="window.location.href='exposiciones.html#panel-comprar';">
+
+                            Comprar entradas
+
+                        </button>
+
+                    </footer>
+
+                </section>
+
+            </article>
+
+
+
+            <header>
+
+                <h4>PERMANENTES</h4>
+
+                <h2>Exposiciones permanentes</h2>
+
+            </header>
+
+
+            <article class="tarjeta-exposicion">
+
+                <img src="recursos/Paramo/biodiversidadEndemica.png" alt="Paisaje del páramo">
+
+                <section>
+
+                    <h3>
+
+                        Vida entre las Nubes:
+                        Fauna de Altura
+
+                    </h3>
+
+                    <p>
+
+                        Descubre las especies emblemáticas del páramo:
+                        cóndor andino, oso de anteojos y curiquingue.
+
+                    </p>
+
+                    <footer>
+
+                        Sala 1 · Planta Baja
+
+                    </footer>
+
+                </section>
+
+            </article>
+
+
+
+            <article class="tarjeta-exposicion">
+
+                <img src="recursos/Paramo/floraEspecializada.png" alt="Flora del páramo">
+
+                <section>
+
+                    <h3>
+
+                        Flora del páramo:
+                        herbario vivo
+
+                    </h3>
+
+                    <p>
+
+                        Más de 200 especies vegetales con fotografía científica,
+                        distribución geográfica y usos etnobotánicos.
+
+                    </p>
+
+                    <footer>
+
+                        Sala 2 · Planta Baja
+
+                    </footer>
+
+                </section>
+
+            </article>
+
+        </section>
+
+
+
+
+        <!-- ============================= -->
+        <!-- PANEL 2 -->
+        <!-- ============================= -->
+
+        <section id="panel-horarios" class="tab-panel" role="tabpanel" aria-labelledby="tab-horarios" hidden>
+
+            <header>
+
+                <h4>PLANIFICA TU VISITA</h4>
+
+                <h2>Horarios</h2>
+
+            </header>
+
+
+            <section class="circulos">
+
+                <article>
+
+                    <h3>Martes a Viernes</h3>
+
+                    <strong>09:00 - 17:00</strong>
+
+                    <p>Último ingreso 16:00</p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Sábados y Domingos</h3>
+
+                    <strong>09:00 - 19:00</strong>
+
+                    <p>Último ingreso 18:00</p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Lunes</h3>
+
+                    <strong>Cerrado</strong>
+
+                    <p>Mantenimiento de colecciones</p>
+
+                </article>
+
+            </section>
+
+
+            <header>
+
+                <h4>PRECIOS</h4>
+
+                <h2>Tarifas de entrada</h2>
+
+            </header>
+
+
+            <section class="circulos">
+
+                <article>
+
+                    <h3>Adulto general</h3>
+
+                    <strong>$6,00</strong>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Estudiantes</h3>
+
+                    <strong>$4,00</strong>
+
+                    <p>Carnet estudiantil</p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Niños</h3>
+
+                    <strong>$2,00</strong>
+
+                    <p>5 - 12 años</p>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Menores de 5 años</h3>
+
+                    <strong>GRATIS</strong>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Personas con discapacidad</h3>
+
+                    <strong>GRATIS</strong>
+
+                    <p>Carnet CONADIS</p>
+
+                </article>
+
+            </section>
+
+        </section>
+
+
+
+
+        <!-- ============================= -->
+        <!-- PANEL 3 -->
+        <!-- ============================= -->
+
+        <section id="panel-comprar" class="tab-panel" role="tabpanel" aria-labelledby="tab-comprar" hidden>
+
+            <header>
+
+                <h4>TRANSACCIÓN</h4>
+
+                <h2>Compra tus entradas</h2>
+
+            </header>
+
+
+            <form>
+
+                <fieldset>
+
+                    <legend>
+
+                        Reserva de entradas
+
+                    </legend>
+
+
+                    <label for="fecha">
+
+                        Fecha de visita
+
+                    </label>
+
+                    <input id="fecha" type="date" required>
+
+
+                    <label for="expo">
+
+                        Exposición de interés
+
+                    </label>
+
+                    <select id="expo">
+
+                        <option>Selecciona una exposición</option>
+
+                        <option>El agua invisible</option>
+
+                        <option>Vida entre las nubes</option>
+
+                        <option>Flora del páramo</option>
+
+                    </select>
+
+
+                    <label for="adultos">
+
+                        Adultos
+
+                    </label>
+
+                    <input id="adultos" type="number" min="0" value="0">
+
+
+                    <label for="estudiantes">
+
+                        Estudiantes
+
+                    </label>
+
+                    <input id="estudiantes" type="number" min="0" value="0">
+
+
+                    <label for="ninos">
+
+                        Niños
+
+                    </label>
+
+                    <input id="ninos" type="number" min="0" value="0">
+
+
+                    <label for="gratis">
+
+                        Entradas gratuitas
+
+                    </label>
+
+                    <input id="gratis" type="number" min="0" value="0">
+
+
+                    <label for="nombre">
+
+                        Nombre completo
+
+                    </label>
+
+                    <input id="nombre" type="text" required placeholder="Ej: Pedro Pérez">
+
+
+                    <label for="correo">
+
+                        Correo electrónico
+
+                    </label>
+
+                    <input id="correo" type="email" required placeholder="Ej: pedro2004@ejemplo.com">
+
+
+                    <button type="submit">
+
+                        Confirmar y pagar
+
+                    </button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+
+    <footer class="footer">
+
+        <section class="footer-cont">
+
+            <img src="recursos/logo-museo.svg" alt="Logo Museo Allpa Urku" class="logo-footer">
+
+            <p class="eslogan">
+
+                Cuidar el páramo es cuidar la vida.
+
+            </p>
+
+            <nav class="footer-links" aria-label="Enlaces del sitio">
+
+                <a href="contacto.html">Contacto</a>
+
+                <a href="#">Declaración de accesibilidad</a>
+
+                <a href="#">Política de privacidad</a>
+
+                <a href="#">Términos de uso</a>
+
+            </nav>
+
+            <address>
+
+                Calle Pichincha S1-80 y calle Quito Lloa
+
+                <br>
+
+                Quito - Ecuador
+
+                <br>
+
+                +593 987 654 321
+
+            </address>
+
+        </section>
+
+    </footer>
+
+    <script src="scripts/exposiciones.js"></script>
+    <script src="scripts/validacionAutomaticaEntradas.js"></script>
+
 </body>
+
 </html>
