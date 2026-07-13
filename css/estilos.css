@@ -9,6 +9,8 @@
     --dorado: #E8C547;
     --blanco-niebla: #F0F4F8;
     --gris-claro: #E5E5E5;
+    --ambar-vulnerable: #FDECC8;
+    --ambar-vulnerable-oscuro: #8A5A00;
 
     /* ======= CAPA 2. Paleta de colores procesada =======
                 Usar directamente en el diseño              
@@ -202,9 +204,19 @@ small,
 /* header - icons --------------------------------------------------------*/
 .header-icons {
     display: flex;
+    gap: 8px;
     background-color: var(--azul-glaciar);
     padding: 10px;
 
+}
+
+/* Área clicable mínima 24x24 — criterio 2.5.8 (AA, nuevo en WCAG 2.2) */
+.header-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
 }
 
 
@@ -1291,8 +1303,8 @@ footer a {
     font-size: 12px;
     padding: 3px 12px;
     border-radius: 12px;
-    background: var(--verde-vulnerable);
-    color: var(--verde-vulnerable-texto);
+    background: var(--ambar-vulnerable);
+    color: var(--ambar-vulnerable-oscuro);
     margin-bottom: 8px;
 }
 

@@ -20,8 +20,8 @@
             <a href="#main"> ↓ Saltar a contenido principal</a>
         </section>
         <section class="header-icons">
-            <a href=""><img src="/recursos/icons/microphone.svg" alt="Asistente por voz"></a>
-            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad"></a>
+            <a href="#"><img src="/recursos/icons/microphone.svg" alt="Asistente por voz"></a>
+            <a href="#"><img src="/recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad"></a>
             <!-- Aquí especificar idioma -->
         </section>
 
@@ -74,6 +74,7 @@
             </section>
 
             <h2 class="oculto">Resultados de la colección</h2>
+            <p class="oculto" role="status" aria-live="polite" id="estadoBusqueda"></p>
             <section class="coleccion-cards" id="contenedorCards"></section>
 
             <section class="paginacion" id="contenedorPaginacion"></section>
@@ -92,8 +93,8 @@
             <section class="footer-links">
                 <a href="contacto.html">Contacto</a>
                 <a href="declaracion-acc.html">Declaración de Accesibilidad</a>
-                <a href="####">Política de Privacidad</a>
-                <a href="####">Términos de uso</a>
+                <a href="politica-privacidad.html">Política de Privacidad</a>
+                <a href="terminos-uso.html">Términos de uso</a>
             </section>
             <section class="footer-direccion">
                 <p>
@@ -224,6 +225,7 @@
         const contenedorPaginacion = document.getElementById('contenedorPaginacion');
         const campoBusqueda = document.getElementById('campoBusqueda');
         const botonesFiltro = document.querySelectorAll('.filtro-btn');
+        const estadoBusqueda = document.getElementById('estadoBusqueda');
 
         function normalizar(texto) {
             return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -271,12 +273,15 @@
             if (filtradas.length === 0) {
                 contenedorCards.innerHTML = '<div class="sin-resultados">No se encontraron especies que coincidan con tu búsqueda.</div>';
                 contenedorPaginacion.innerHTML = '';
+                estadoBusqueda.textContent = 'No se encontraron especies que coincidan con tu búsqueda.';
                 return;
             }
 
             const inicio = (paginaActual - 1) * porPagina;
             const especiesPagina = filtradas.slice(inicio, inicio + porPagina);
             especiesPagina.forEach(especie => contenedorCards.appendChild(crearCard(especie)));
+
+            estadoBusqueda.textContent = `${filtradas.length} especie${filtradas.length === 1 ? '' : 's'} encontrada${filtradas.length === 1 ? '' : 's'}, página ${paginaActual} de ${totalPaginas}.`;
 
             renderizarPaginacion(totalPaginas);
         }
