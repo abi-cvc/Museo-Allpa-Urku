@@ -117,16 +117,29 @@ small, .texto-secundario {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
 
 
 }
 .contacto{
 
-    width:420px;
+    width:100%;
+    max-width:420px;
     background:var(--fondo-principal);
     border:2px solid var(--azul-marino);
     border-radius:10px;
     padding:40px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 500px) {
+    .contenedor-contacto {
+        padding: 24px 16px;
+    }
+
+    .contacto {
+        padding: 24px;
+    }
 }
 
 h1{

@@ -254,6 +254,12 @@ small,
     background: var(--azul-marino);
 }
 
+.contenedor-inicial img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 .contenedor-inicial .kicker {
     text-align: center;
     color: var(--azul-glaciar);
@@ -919,6 +925,7 @@ footer a {
     align-items: center;
     justify-content: center;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .carrusel-item img {
@@ -1021,10 +1028,7 @@ footer a {
 
     .carrusel-item {
         flex-basis: 100%;
-    }
-
-    .carrusel-flecha {
-        display: none;
+        padding: 0 8px;
     }
 }
 
@@ -1397,15 +1401,29 @@ footer a {
     align-items: center;
 }
 
+@media (max-width: 640px) {
+    .contenedor-pestanas {
+        grid-template-columns: 1fr;
+        margin: 20px;
+    }
+
+    .contenedor-pestanas button {
+        margin: 6px 0;
+    }
+}
+
 .contenedor-pestanas button {
     font-weight: var(--peso-medio);
     margin: 20px;
     background-color: var(--gris-claro);
     color: var(--azul-marino);
+    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    height: 40px;
+    min-height: 40px;
+    height: auto;
+    padding: 8px;
     border: 2px solid transparent;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
