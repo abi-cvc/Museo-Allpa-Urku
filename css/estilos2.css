@@ -90,10 +90,14 @@ small, .texto-secundario {
     color: var(--texto-suave);
 }
 
-/* Foco visible — criterio 2.4.7 (AA). NO quitar el outline. */
+/* Foco visible — criterio 2.4.7 y 2.4.11 (AA). NO quitar el outline.
+   Anillo doble (blanco + azul-marino): así siempre hay 3:1 de contraste
+   contra el fondo, sea claro u oscuro. #39FF14 se descartó porque da
+   ~1.23:1 contra --fondo-principal (falla 1.4.11). */
 :focus-visible {
-    outline: 5px solid #39FF14;
+    outline: 3px solid var(--azul-marino);
     outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--azul-marino);
 }
 
 /* Respeto a preferencia de reducir movimiento — req. 6.5 */
@@ -213,5 +217,23 @@ button{
     position:absolute;
 
     left:-9999px;
+}
+
+.contenedor-declaracion{
+
+    max-width:760px;
+    margin:0 auto;
+    padding:50px 20px;
+    line-height:var(--interlineado-cuerpo);
+}
+
+.contenedor-declaracion h2{
+
+    margin-top:2rem;
+}
+
+.contenedor-declaracion ul{
+
+    padding-left:1.25rem;
 }
 

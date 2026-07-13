@@ -20,8 +20,8 @@
             <a href="#main"> ↓ Saltar a contenido principal</a>
         </section>
         <section class="header-icons">
-            <a href=""><img src="/recursos/icons/microphone.svg" alt="Icono de microfono"></a>
-            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Icono de accesibilidad"></a>
+            <a href=""><img src="/recursos/icons/microphone.svg" alt="Asistente por voz"></a>
+            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad"></a>
             <!-- Aquí especificar idioma -->
         </section>
 
@@ -40,10 +40,10 @@
 
     <main id="main">
         <section class="contenedor-inicial">
-            <h4>COLECCIÓN</h4>
-            <h2>Especies del páramo andino:
-                Orgullo de los Andes</h2>
-            <h5>Más de 600 especies de fauna y flora documentadas del ecosistema de alta montaña ecuatoriano.</h5>
+            <p class="kicker">COLECCIÓN</p>
+            <h1>Especies del páramo andino:
+                Orgullo de los Andes</h1>
+            <p class="subtitulo">Más de 600 especies de fauna y flora documentadas del ecosistema de alta montaña ecuatoriano.</p>
 
         </section>
 
@@ -73,6 +73,7 @@
                 <button class="filtro-btn" data-filtro="peligro">En Peligro</button>
             </section>
 
+            <h2 class="oculto">Resultados de la colección</h2>
             <section class="coleccion-cards" id="contenedorCards"></section>
 
             <section class="paginacion" id="contenedorPaginacion"></section>
@@ -90,7 +91,7 @@
 
             <section class="footer-links">
                 <a href="contacto.html">Contacto</a>
-                <a href="####">Declaración de Accesibilidad</a>
+                <a href="declaracion-acc.html">Declaración de Accesibilidad</a>
                 <a href="####">Política de Privacidad</a>
                 <a href="####">Términos de uso</a>
             </section>
@@ -249,7 +250,7 @@
             div.innerHTML = `
       <img src="${especie.imagen}" alt="${especie.nombreComun}">
       <div class="contenido">
-        <h5>${especie.nombreComun}</h5>
+        <h3>${especie.nombreComun}</h3>
         <p class="cientifico">${especie.nombreCientifico}</p>
         <p class="categoria">${especie.categoria}</p>
         <span class="badge-estado ${especie.claseEstado}">${especie.estado}</span>
@@ -327,3 +328,5 @@
         renderizar();
     </script>
 </body>
+
+</html>

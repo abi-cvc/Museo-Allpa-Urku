@@ -20,8 +20,8 @@
             <a href="#main"> ↓ Saltar a contenido principal</a>
         </section>
         <section class="header-icons">
-            <a href=""><img src="/recursos/icons/microphone.svg" alt="Icono de microfono"></a>
-            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Icono de accesibilidad"></a>
+            <a href=""><img src="/recursos/icons/microphone.svg" alt="Asistente por voz"></a>
+            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad"></a>
             <!-- Aquí especificar idioma -->
         </section>
 
@@ -40,14 +40,14 @@
     <main id="main">
 
         <section class="contenedor-inicial">
-            <h4>SOBRE EL MUSEO</h4>
-            <h2>GUARDIANES DEL PÁRAMO ANDINO</h2>
-            <h5>Somos un espacio dedicado a la investigación, conservación y divulgación del ecosistema del pármo del
-                Ecuador</h5>
+            <p class="kicker">SOBRE EL MUSEO</p>
+            <h1>GUARDIANES DEL PÁRAMO ANDINO</h1>
+            <p class="subtitulo">Somos un espacio dedicado a la investigación, conservación y divulgación del ecosistema del pármo del
+                Ecuador</p>
         </section>
 
         <article class="contenedor-vision">
-            <h4>MISION Y VISIÓN</h4>
+            <p class="kicker">MISION Y VISIÓN</p>
             <h2>¿Por qué existimos?</h2>
             <section class="card-vision">
                 <p>El Museo Allpa nace de la convicción de saber que la conservación del páramo empieza por conocerlo.
@@ -61,40 +61,41 @@
 
                 <video width="520" height="320" controls>
                     <source src="tu-video.mp4" type="video/mp4">
+                    <track kind="captions" src="recursos/subtitulos/mision.vtt" srclang="es" label="Español">
                     Nuestra misión.
                 </video>
             </section>
         </article>
 
         <article class="contenedor-numeros">
-            <h4>EL MUSEO EN NÚMEROS</h4>
+            <p class="kicker">EL MUSEO EN NÚMEROS</p>
             <h2>Nuestra Trayectoria</h2>
             <section class="contenedor-card-numeros">
                 <section class="card-numero">
-                    <h4>+4000</h4>
+                    <h3>+4000</h3>
                     <p>metros sobre el nivel del mar</p>
                 </section>
                 <section class="card-numero">
-                    <h4>+600</h4>
+                    <h3>+600</h3>
                     <p>especies registradas en colección</p>
                 </section>
 
                 <section class="card-numero">
-                    <h4>12</h4>
+                    <h3>12</h3>
                     <p>exposiciones permanentes</p>
                 </section>
 
                 <section class="card-numero">
-                    <h4>35%</h4>
+                    <h3>35%</h3>
                     <p>del agua dulce del Ecuador sale de aquí</p>
                 </section>
             </section>
         </article>
 
         <article class="contenedor-historia">
-            <h4>HISTORIA</h4>
+            <p class="kicker">HISTORIA</p>
             <h2>¿Cómo nació el museo?</h2>
-            <section class="linea-tiempo" aria-label="Línea del tiempo de la historia del museo">
+            <section class="linea-tiempo">
                 <ol class="timeline">
                     <li class="timeline-item">
                         <div class="timeline-year" aria-hidden="true">2010</div>
@@ -129,29 +130,29 @@
         </article>
 
         <article class="contenedor-valores">
-            <h4>VALORES</h4>
+            <p class="kicker">VALORES</p>
             <h2>¿Qué nos guía?</h2>
             <section class="valores-card">
                 <section>
-                    <h4>Conservación</h4>
+                    <h3>Conservación</h3>
                     <hr>
                     <p>Cada pieza de la colección contribuye al conocimiento científico del páramo.</p>
                 </section>
 
                 <section>
-                    <h4>Accesibilidad</h4>
+                    <h3>Accesibilidad</h3>
                     <hr>
                     <p>El conocimiento sobre el páramo debe ser accesible para todas las personas.</p>
                 </section>
 
                 <section>
-                    <h4>Educación</h4>
+                    <h3>Educación</h3>
                     <hr>
                     <p>Transformamos datos científicos en experiencias que inspiran y educan.</p>
                 </section>
 
                 <section>
-                    <h4>Comunidad</h4>
+                    <h3>Comunidad</h3>
                     <hr>
                     <p>Trabajamos junto a comunidades andinas y organizaciones de conservación.</p>
                 </section>
@@ -159,11 +160,13 @@
             </section>
         </article>
 
-        <section class="carrusel-contenedor" role="region" aria-label="Aliados y colaboradores">
-            <button class="carrusel-flecha carrusel-flecha--izq" aria-label="Ver logo anterior">&#10094;</button>
+        <section class="carrusel-contenedor">
+            <h2 class="oculto" id="titulo-carrusel">Aliados y colaboradores</h2>
 
-            <div class="carrusel-viewport">
-                <ul class="carrusel-track" aria-live="polite">
+            <button class="carrusel-flecha carrusel-flecha--izq"><span class="oculto">Ver logo anterior</span>&#10094;</button>
+
+            <div class="carrusel-viewport" aria-labelledby="titulo-carrusel">
+                <ul class="carrusel-track">
                     <li class="carrusel-item"><img src="recursos/sobreNosotros/aliado-CentroJambatu.png" alt="Centro Jambatu"></li>
                     <li class="carrusel-item"><img src="recursos/sobreNosotros/aliado-MinisterioAmbiente.png" alt="Ministerio del Ambiente"></li>
                     <li class="carrusel-item"><img src="recursos/sobreNosotros/aliado-UICN.png" alt="UICN"></li>
@@ -171,7 +174,7 @@
                 </ul>
             </div>
 
-            <button class="carrusel-flecha carrusel-flecha--der" aria-label="Ver logo siguiente">&#10095;</button>
+            <button class="carrusel-flecha carrusel-flecha--der"><span class="oculto">Ver logo siguiente</span>&#10095;</button>
         </section>
         <script>
             (function () {
@@ -206,7 +209,7 @@
 
             <section class="footer-links">
                 <a href="contacto.html">Contacto</a>
-                <a href="####">Declaración de Accesibilidad</a>
+                <a href="declaracion-acc.html">Declaración de Accesibilidad</a>
                 <a href="####">Política de Privacidad</a>
                 <a href="####">Términos de uso</a>
             </section>

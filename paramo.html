@@ -20,8 +20,8 @@
             <a href="#main"> ↓ Saltar a contenido principal</a>
         </section>
         <section class="header-icons">
-            <a href=""><img src="/recursos/icons/microphone.svg" alt="Icono de microfono"></a>
-            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Icono de accesibilidad"></a>
+            <a href=""><img src="/recursos/icons/microphone.svg" alt="Asistente por voz"></a>
+            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad"></a>
             <!-- Aquí especificar idioma -->
         </section>
 
@@ -37,14 +37,15 @@
         <a href="contacto.html">Contacto</a>
     </nav>
 
+    <main id="main">
     <section class="contenedor-inicial">
-        <h4>EL ECOSISTEMA</h4>
-        <h2>El páramo: el jardín de niebla de los Andes</h2>
-        <h5>Un ecosistema único en el mundo, ubicado entre los 3.000 y 5.000 metros de altitud, que regula el agua de
-            millones de personas.</h5>
-        <h5>
+        <p class="kicker">EL ECOSISTEMA</p>
+        <h1>El páramo: el jardín de niebla de los Andes</h1>
+        <p class="subtitulo">Un ecosistema único en el mundo, ubicado entre los 3.000 y 5.000 metros de altitud, que regula el agua de
+            millones de personas.</p>
+        <p class="subtitulo">
             Explora nuestra colección con más de 600 especies documentadas.
-        </h5>
+        </p>
 
         <div class="tarjetas-inicio">
             <a href="">Planifica tu visita</a>
@@ -54,7 +55,7 @@
 
 
     <article class="contenedor-vision">
-        <h4>¿QUÉ ES?</h4>
+        <p class="kicker">¿QUÉ ES?</p>
         <h2>Un ecosistema en las nubes</h2>
         <section class="card-vision">
             <p>El páramo es un ecosistema de alta montaña tropical exclusivo de los Andes del norte — Ecuador, Colombia,
@@ -65,6 +66,7 @@
 
             <video width="520" height="320" controls>
                 <source src="tu-video.mp4" type="video/mp4">
+                <track kind="captions" src="recursos/subtitulos/que-es-paramo.vtt" srclang="es" label="Español">
                 Video explicativo qué es el parámo.
             </video>
         </section>
@@ -72,44 +74,44 @@
 
 
     <article class="contenedor-caracteristicas">
-        <h4>CARACTERÍSTICAS</h4>
-        <H2>¿Por qué es tan especial?</H2>
+        <p class="kicker">CARACTERÍSTICAS</p>
+        <h2>¿Por qué es tan especial?</h2>
 
-        <figure class="coleccion-cards">
+        <div class="coleccion-cards">
             <section class="card-especie">
                 <img src="recursos/Paramo/esponjaAndes.png" alt="Foto de los andes">
-                <h5>La esponja de agua de los Andes</h5>
+                <h3>La esponja de agua de los Andes</h3>
                 <p>Su suelo orgánico puede absorber hasta 10 veces su peso en agua, liberándola lentamente hacia los
                     ríos durante todo el año.</p>
             </section>
 
             <section class="card-especie">
                 <img src="recursos/Paramo/climaExtremo.png" alt="Foto clima extremo">
-                <h5>Clima extremo y único</h5>
+                <h3>Clima extremo y único</h3>
                 <p>Las temperaturas oscilan entre 0°C y 15°C con radiación UV muy alta. En un mismo día puede haber sol,
                     lluvia, granizo y neblina.</p>
             </section>
 
             <section class="card-especie">
                 <img src="recursos/Paramo/floraEspecializada.png" alt="Foto Flora especializada">
-                <h5>Flora altamente especializada</h5>
+                <h3>Flora altamente especializada</h3>
                 <p>Las plantas desarrollaron adaptaciones únicas: hojas con pelos para retener calor, rosetas para
                     protegerse del viento, raíces profundas para anclar en suelos volcánicos.</p>
             </section>
 
             <section class="card-especie">
                 <img src="recursos/inicio/RanaMarsupialAndina.png" alt="FotoBiodiversidad endémica">
-                <h5>Biodiversidad endémica</h5>
+                <h3>Biodiversidad endémica</h3>
                 <p>Muchas de las especies que habitan el páramo no se encuentran en ningún otro lugar del planeta, lo
                     que lo convierte en un hotspot de biodiversidad.</p>
             </section>
 
-        </figure>
+        </div>
     </article>
 
     <article class="contenedor-zonificaicion">
-        <h4>ZONIFICACIÓN</h4>
-        <H2>La zona del páramo</H2>
+        <p class="kicker">ZONIFICACIÓN</p>
+        <h2>La zona del páramo</h2>
         <p>El páramo no es uniforme — se divide en zonas según la altitud, cada una con características y especies
             propias.</p>
         <section class="zonificacion-card">
@@ -159,39 +161,38 @@
                 </div>
             </div>
         </section>
-        </section>
-
 
     </article>
 
     <article class="contenedor-caracteristicas">
-        <h4>CONSERVACIÓN</h4>
-        <H2>Principales amenazas del páramo</H2>
+        <p class="kicker">CONSERVACIÓN</p>
+        <h2>Principales amenazas del páramo</h2>
         <p>El páramo ecuatoriano enfrenta presiones crecientes que amenazan su integridad y función ecológica.</p>
 
-        <figure class="coleccion-cards">
+        <div class="coleccion-cards">
             <section class="card-especie">
                 <img src="recursos/Paramo/quemaAgricola.png" alt="Foto quema agricola">
-                <h5>Quemas agrícolas</h5>
+                <h3>Quemas agrícolas</h3>
                 <p>La quema para ampliar pastizales destruye la capa orgánica del suelo, reduciendo su capacidad de
                     retención hídrica.</p>
             </section>
 
             <section class="card-especie">
                 <img src="recursos/Paramo/avanceAgricola.png" alt="Foto avance agricola">
-                <h5>Avance agrícola</h5>
+                <h3>Avance agrícola</h3>
                 <p>La expansión de cultivos de papa y pastos hacia zonas de páramo reduce el área disponible para la
                     biodiversidad nativa.</p>
             </section>
 
             <section class="card-especie">
                 <img src="recursos/Paramo/plantacionesExoticas.png" alt="Foto Plantaciones exóticas">
-                <h5>Plantaciones exóticas</h5>
+                <h3>Plantaciones exóticas</h3>
                 <p>La introducción de pinos y eucaliptos consume grandes cantidades de agua y desplaza la vegetación
                     nativa del páramo.</p>
             </section>
-        </figure>
+        </div>
     </article>
+    </main>
 
     <footer class="footer">
 
@@ -201,7 +202,7 @@
 
             <section class="footer-links">
                 <a href="contacto.html">Contacto</a>
-                <a href="####">Declaración de Accesibilidad</a>
+                <a href="declaracion-acc.html">Declaración de Accesibilidad</a>
                 <a href="####">Política de Privacidad</a>
                 <a href="####">Términos de uso</a>
             </section>

@@ -123,16 +123,49 @@ h4 {
     color: var(--texto-suave);
 }
 
+/* Etiqueta visual encima de un título (no es un encabezado real —
+   evita saltos de nivel, criterio 1.3.1). Mismo estilo que h4. */
+.kicker {
+    font-family: var(--fuente-titulos);
+    line-height: var(--interlineado-titulos);
+    font-size: var(--tam-h4);
+    font-weight: var(--peso-medio);
+    color: var(--texto-suave);
+}
+
+/* Texto descriptivo bajo un título (no es un encabezado real). */
+.subtitulo {
+    font-size: var(--tam-base);
+    font-weight: var(--peso-normal);
+}
+
 small,
 .texto-secundario {
     font-size: var(--tam-small);
     color: var(--texto-suave);
 }
 
-/* Foco visible — criterio 2.4.7 (AA). NO quitar el outline. */
+/* Foco visible — criterio 2.4.7 y 2.4.11 (AA). NO quitar el outline.
+   Anillo doble (blanco + azul-marino): así siempre hay 3:1 de contraste
+   contra el fondo, sea claro u oscuro. #39FF14 se descartó porque da
+   ~1.23:1 contra --fondo-principal (falla 1.4.11). */
 :focus-visible {
-    outline: 5px solid #39FF14;
+    outline: 3px solid var(--azul-marino);
     outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--azul-marino);
+}
+
+/* Texto solo para lectores de pantalla: nombre accesible sin aria-label */
+.oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 /* Respeto a preferencia de reducir movimiento — req. 6.5 */
@@ -208,7 +241,7 @@ small,
     background: var(--azul-marino);
 }
 
-.contenedor-inicial h4 {
+.contenedor-inicial .kicker {
     text-align: center;
     color: var(--azul-glaciar);
     padding: 20px;
@@ -216,12 +249,16 @@ small,
     border: var(--azul-glaciar);
 }
 
-.contenedor-inicial h2 {
+/* El h1 hereda el tamaño/peso que antes tenía el h2 del hero
+   para no cambiar el diseño visual. */
+.contenedor-inicial h1 {
+    font-size: var(--tam-h2);
+    font-weight: var(--peso-medio);
     color: var(--blanco-niebla);
     text-align: center;
 }
 
-.contenedor-inicial h5 {
+.contenedor-inicial .subtitulo {
     color: var(--azul-glaciar);
     text-align: center;
     padding-bottom: 30px;
@@ -280,7 +317,7 @@ small,
 }
 
 
-.card-especie h5 {
+.card-especie h3 {
     font-size: var(--tam-h3);
     margin-top: 5px;
     margin-left: 10px;
@@ -419,12 +456,12 @@ small,
     padding: 50px;
 }
 
-.contenedor-visitas h3 {
+.contenedor-visitas h2 {
     color: var(--texto-claro);
     text-align: center;
 }
 
-.contenedor-visitas h5 {
+.contenedor-visitas .subtitulo {
     color: var(--acento);
     text-align: center;
 }
@@ -616,14 +653,14 @@ footer a {
         font-size: 0.85rem;
     }
 
-    .contenedor-inicial h2 {
+    .contenedor-inicial h1 {
         font-size: 1.6rem;
     }
 
-    .contenedor-inicial h5,
+    .contenedor-inicial .subtitulo,
     .agenda-intro,
     .evento-contenido p,
-    .contenedor-visitas h5 {
+    .contenedor-visitas .subtitulo {
         font-size: 0.95rem;
     }
 
@@ -700,6 +737,10 @@ footer a {
     margin: 20px;
     height: 150px;
     padding: 10px;
+}
+
+.card-numero h3 {
+    font-size: var(--tam-h4);
 }
 
 /* Línea de tiempo ----------------------------------------------------------*/
@@ -1152,7 +1193,6 @@ footer a {
 
 .buscador input {
     border: none;
-    outline: none;
     flex: 1;
     font-size: 15px;
     background: transparent;
@@ -1223,7 +1263,7 @@ footer a {
     padding: 0 10px 10px;
 }
 
-.card-especie h5 {
+.card-especie h3 {
     font-size: var(--tam-h3);
     margin-top: 8px;
     margin-left: 0;
@@ -1855,9 +1895,7 @@ footer a {
 
 #panel-comprar input:focus,
 #panel-comprar select:focus {
-    outline: none;
     border-color: var(--azul-glaciar);
-    box-shadow: 0 0 0 3px rgba(74, 155, 175, 0.2);
 }
 
 /* --- Estilos para inputs numéricos (entradas) --- */

@@ -186,14 +186,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Crear botón -
             const btnMenos = document.createElement('button');
             btnMenos.type = 'button';
-            btnMenos.textContent = '−';
-            btnMenos.setAttribute('aria-label', 'Disminuir cantidad');
-            
+            btnMenos.innerHTML = '<span class="oculto">Disminuir cantidad</span>−';
+
             // Crear botón +
             const btnMas = document.createElement('button');
             btnMas.type = 'button';
-            btnMas.textContent = '+';
-            btnMas.setAttribute('aria-label', 'Aumentar cantidad');
+            btnMas.innerHTML = '<span class="oculto">Aumentar cantidad</span>+';
             
             // Insertar antes del input
             wrapper.insertBefore(btnMenos, input);
