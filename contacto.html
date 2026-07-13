@@ -1,17 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contáctanos | Museo Allpa Urku</title>
+    <title>Contacto| Museo Allpa Urku</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos2.css">
 </head>
-<body>
 
+<body>
+    <header>
+        <section class="skip-link">
+            <a href="#main"> ↓ Saltar a contenido principal</a>
+        </section>
+        <section class="header-icons">
+            <a href=""><img src="/recursos/icons/microphone.svg" alt="Icono de microfono"></a>
+            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Icono de accesibilidad"></a>
+            <!-- Aquí especificar idioma -->
+        </section>
+
+    </header>
+
+    <nav class="nav-menu">
+        <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre el museo</a>
+        <a href="paramo.html">El Páramo</a>
+        <a href="colecciones.html">Colección</a>
+        <a href="exposiciones.html">Exposiciones</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <main class="contenedor-contacto" id="main">
+        <section class="contacto" aria-labelledby="titulo-contacto">
+
+            <h1 id="titulo-contacto">
+                Contacta con nosotros
+            </h1>
+
+            <form id="formContacto" novalidate>
+
+                <fieldset>
+
+                    <legend class="oculto">
+                        Formulario de contacto
+                    </legend>
+
+                    <!-- Nombre -->
+
+                    <div class="grupo">
+
+                        <label for="nombre">
+                            Nombre completo
+                        </label>
+
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Perez" required minlength="5"
+                            autocomplete="name" aria-describedby="errorNombre">
+
+                        <small id="errorNombre" class="error" aria-live="polite">
+                        </small>
+
+                    </div>
+
+                    <!-- Correo -->
+
+                    <div class="grupo">
+
+                        <label for="correo">
+                            Correo
+                        </label>
+
+                        <input type="email" id="correo" name="correo" placeholder="Ej: luisperez@outlook.com" required
+                            autocomplete="email" aria-describedby="errorCorreo">
+
+                        <small id="errorCorreo" class="error" aria-live="polite">
+                        </small>
+
+                    </div>
+
+                    <!-- Asunto -->
+
+                    <div class="grupo">
+
+                        <label for="asunto">
+                            Asunto
+                        </label>
+
+                        <input type="text" id="asunto" name="asunto" placeholder="Ej: Fechas de Visita" required minlength="5"
+                            aria-describedby="errorAsunto">
+
+                        <small id="errorAsunto" class="error" aria-live="polite">
+                        </small>
+
+                    </div>
+
+                    <!-- Mensaje -->
+
+                    <div class="grupo">
+
+                        <label for="mensaje">
+                            Mensaje
+                        </label>
+
+                        <textarea id="mensaje" name="mensaje" rows="8" placeholder="Tu duda/mensaje" required minlength="20"
+                            aria-describedby="errorMensaje"></textarea>
+
+                        <small id="errorMensaje" class="error" aria-live="polite">
+                        </small>
+
+                    </div>
+
+                    <!-- Términos -->
+
+                    <fieldset class="terminos">
+
+                        <legend>
+                            Términos y condiciones
+                        </legend>
+
+                        <label class="check">
+
+                            <input type="checkbox" id="terminos" required aria-describedby="errorTerminos">
+
+                            Aceptar términos y condiciones
+
+                        </label>
+
+                        <small id="errorTerminos" class="error" aria-live="polite">
+                        </small>
+
+                    </fieldset>
+
+                    <button type="submit">
+                        Aceptar
+                    </button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+
+    </main>
+
+
+    <footer class="footer">
+
+        <section class="footer-cont">
+            <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo-footer">
+            <p class="eslogan">Cuidar el pármo es cuidar la vida</p>
+
+            <section class="footer-links">
+                <a href="contacto.html">Contacto</a>
+                <a href="####">Declaración de Accesibilidad</a>
+                <a href="####">Política de Privacidad</a>
+                <a href="####">Términos de uso</a>
+            </section>
+            <section class="footer-direccion">
+                <p>
+
+                    Calle Pichincha S1-80 y calle Quito Lloa, Quito, Pichincha
+                </p>
+                <p>
+                    Teléfono: +593 987 654 321
+                </p>
+
+            </section>
+        </section>
+        <hr>
+        <p>© 2024 Museo Allpa Urku. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="scripts/validacionAutomatica.js"></script>
 </body>
+
 </html>
