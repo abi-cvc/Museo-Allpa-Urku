@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colecciones | Museo Allpa Urku</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <section class="skip-link">
+            <a href="#main"> ↓ Saltar a contenido principal</a>
+        </section>
+        <section class="header-icons">
+            <a href=""><img src="/recursos/icons/microphone.svg" alt="Icono de microfono"></a>
+            <a href=""><img src="/recursos/icons/icon_accesibilidad.svg" alt="Icono de accesibilidad"></a>
+            <!-- Aquí especificar idioma -->
+        </section>
+
+    </header>
+
+    <nav class="nav-menu">
+        <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
+        <a href="index.html">Inicio</a>
+        <a href="nosotros.html">Sobre el museo</a>
+        <a href="paramo.html">El Páramo</a>
+        <a href="colecciones.html">Colección</a>
+        <a href="exposiciones.html">Exposiciones</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+
+
+    <main id="main">
+        <section class="contenedor-inicial">
+            <h4>COLECCIÓN</h4>
+            <h2>Especies del páramo andino:
+                Orgullo de los Andes</h2>
+            <h5>Más de 600 especies de fauna y flora documentadas del ecosistema de alta montaña ecuatoriano.</h5>
+
+        </section>
+
+        <section class="contenedor-coleccion">
+            <label for="campoBusqueda">Buscar:</label>
+            <section class="buscador">
+
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input id="campoBusqueda" type="text" placeholder="Buscar por nombre común o científico">
+            </section>
+
+            <section class="filtros">
+                <span class="etiqueta">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="6" x2="20" y2="6"></line>
+                        <line x1="7" y1="12" x2="17" y2="12"></line>
+                        <line x1="10" y1="18" x2="14" y2="18"></line>
+                    </svg>
+                    Filtrar por:
+                </span>
+                <button class="filtro-btn activo" data-filtro="todas">Todas</button>
+                <button class="filtro-btn" data-filtro="fauna">Fauna</button>
+                <button class="filtro-btn" data-filtro="flora">Flora</button>
+                <button class="filtro-btn" data-filtro="peligro">En Peligro</button>
+            </section>
+
+            <section class="coleccion-cards" id="contenedorCards"></section>
+
+            <section class="paginacion" id="contenedorPaginacion"></section>
+
+        </section>
+    </main>
+
+
+
+    <footer class="footer">
+
+        <section class="footer-cont">
+            <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo-footer">
+            <p class="eslogan">Cuidar el pármo es cuidar la vida</p>
+
+            <section class="footer-links">
+                <a href="contacto.html">Contacto</a>
+                <a href="####">Declaración de Accesibilidad</a>
+                <a href="####">Política de Privacidad</a>
+                <a href="####">Términos de uso</a>
+            </section>
+            <section class="footer-direccion">
+                <p>
+
+                    Calle Pichincha S1-80 y calle Quito Lloa, Quito, Pichincha
+                </p>
+                <p>
+                    Teléfono: +593 987 654 321
+                </p>
+
+            </section>
+        </section>
+        <hr>
+        <p>© 2024 Museo Allpa Urku. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // ---- Datos de especies (JSON) ----
+        const especies = [
+            {
+                nombreComun: "Cóndor Andino",
+                nombreCientifico: "Vultur gryphus",
+                grupo: "fauna",
+                categoria: "FAUNA · AVE RAPAZ",
+                estado: "Vulnerable",
+                claseEstado: "vulnerable",
+                descripcion: "El cóndor es el ave voladora más grande del mundo y símbolo nacional del Ecuador. Habita los páramos y cordilleras andinas por encima de los 3.000 msnm.",
+                habitat: "Páramo · Superpáramo",
+                imagen: "https://images.unsplash.com/photo-1590247813693-5541d1c609fd?w=500&q=80"
+            },
+            {
+                nombreComun: "Oso de Anteojos",
+                nombreCientifico: "Tremarctos ornatus",
+                grupo: "fauna",
+                categoria: "FAUNA · MAMÍFERO",
+                estado: "Vulnerable",
+                claseEstado: "vulnerable",
+                descripcion: "Único oso nativo de Sudamérica. Se le conoce por las manchas claras alrededor de sus ojos y habita bosques nublados y páramos andinos.",
+                habitat: "Bosque Nublado · Páramo",
+                imagen: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?w=500&q=80"
+            },
+            {
+                nombreComun: "Rana Marsupial",
+                nombreCientifico: "Gastrotheca riobambae",
+                grupo: "fauna",
+                categoria: "FAUNA · ANFIBIO",
+                estado: "En Peligro",
+                claseEstado: "en-peligro",
+                descripcion: "Anfibio endémico que carga sus huevos en una bolsa dorsal. Su población ha decrecido por la pérdida de humedales andinos.",
+                habitat: "Humedal Andino",
+                imagen: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=500&q=80"
+            },
+            {
+                nombreComun: "Puma",
+                nombreCientifico: "Puma concolor",
+                grupo: "fauna",
+                categoria: "FAUNA · MAMÍFERO",
+                estado: "Preocupación Menor",
+                claseEstado: "preocupacion-menor",
+                descripcion: "Felino de amplia distribución en América. En Ecuador habita páramos, bosques andinos y zonas de la Amazonía.",
+                habitat: "Páramo · Bosque Andino",
+                imagen: "https://images.unsplash.com/photo-1615497001839-b0a0eac3274c?w=500&q=80"
+            },
+            {
+                nombreComun: "Puya de Sangay",
+                nombreCientifico: "Puya sanguinea",
+                grupo: "flora",
+                categoria: "FLORA · PLANTA ANDINA",
+                estado: "Vulnerable",
+                claseEstado: "vulnerable",
+                descripcion: "Bromelia endémica de los páramos ecuatorianos, reconocible por su inflorescencia roja intensa que atrae colibríes.",
+                habitat: "Páramo",
+                imagen: "https://images.unsplash.com/photo-1509937528035-ad76254b0356?w=500&q=80"
+            },
+            {
+                nombreComun: "Polylepis",
+                nombreCientifico: "Polylepis incana",
+                grupo: "flora",
+                categoria: "FLORA · ÁRBOL ANDINO",
+                estado: "En Peligro",
+                claseEstado: "en-peligro",
+                descripcion: "Conocido como árbol de papel por su corteza laminada. Forma los bosques nativos a mayor altitud del mundo.",
+                habitat: "Bosque de Altura",
+                imagen: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&q=80"
+            },
+            {
+                nombreComun: "Colibrí Estrella Ecuatoriana",
+                nombreCientifico: "Oreotrochilus chimborazo",
+                grupo: "fauna",
+                categoria: "FAUNA · AVE",
+                estado: "Preocupación Menor",
+                claseEstado: "preocupacion-menor",
+                descripcion: "Colibrí adaptado a las alturas del Chimborazo, capaz de entrar en torpor nocturno para sobrevivir al frío extremo.",
+                habitat: "Páramo Alto",
+                imagen: "https://images.unsplash.com/photo-1591608971358-f069e14c50e4?w=500&q=80"
+            },
+            {
+                nombreComun: "Frailejón",
+                nombreCientifico: "Espeletia pycnophylla",
+                grupo: "flora",
+                categoria: "FLORA · PLANTA ANDINA",
+                estado: "Vulnerable",
+                claseEstado: "vulnerable",
+                descripcion: "Planta característica del páramo, con hojas pubescentes que retienen la humedad del ambiente para regular el agua de la cuenca.",
+                habitat: "Páramo",
+                imagen: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=500&q=80"
+            },
+            {
+                nombreComun: "Tapir Andino",
+                nombreCientifico: "Tapirus pinchaque",
+                grupo: "fauna",
+                categoria: "FAUNA · MAMÍFERO",
+                estado: "En Peligro",
+                claseEstado: "en-peligro",
+                descripcion: "También llamado danta de montaña, es el mamífero terrestre más grande de los Andes y disperja semillas clave del bosque.",
+                habitat: "Bosque Nublado · Páramo",
+                imagen: "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=500&q=80"
+            }
+        ];
+
+        // ---- Estado de la aplicación ----
+        let filtroActivo = "todas";
+        let textoBusqueda = "";
+        let paginaActual = 1;
+        const porPagina = 6;
+
+        const contenedorCards = document.getElementById('contenedorCards');
+        const contenedorPaginacion = document.getElementById('contenedorPaginacion');
+        const campoBusqueda = document.getElementById('campoBusqueda');
+        const botonesFiltro = document.querySelectorAll('.filtro-btn');
+
+        function normalizar(texto) {
+            return texto.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+        }
+
+        function obtenerEspeciesFiltradas() {
+            return especies.filter(especie => {
+                const coincideFiltro =
+                    filtroActivo === 'todas' ? true :
+                        filtroActivo === 'peligro' ? especie.claseEstado === 'en-peligro' :
+                            especie.grupo === filtroActivo;
+
+                const coincideBusqueda = textoBusqueda === '' ||
+                    normalizar(especie.nombreComun).includes(textoBusqueda) ||
+                    normalizar(especie.nombreCientifico).includes(textoBusqueda);
+
+                return coincideFiltro && coincideBusqueda;
+            });
+        }
+
+        function crearCard(especie) {
+            const div = document.createElement('div');
+            div.className = 'card-especie';
+            div.innerHTML = `
+      <img src="${especie.imagen}" alt="${especie.nombreComun}">
+      <div class="contenido">
+        <h5>${especie.nombreComun}</h5>
+        <p class="cientifico">${especie.nombreCientifico}</p>
+        <p class="categoria">${especie.categoria}</p>
+        <span class="badge-estado ${especie.claseEstado}">${especie.estado}</span>
+        <p class="descripcion">${especie.descripcion}</p>
+        <p class="habitat">${especie.habitat}</p>
+      </div>
+    `;
+            return div;
+        }
+
+        function renderizar() {
+            const filtradas = obtenerEspeciesFiltradas();
+            const totalPaginas = Math.max(1, Math.ceil(filtradas.length / porPagina));
+            if (paginaActual > totalPaginas) paginaActual = totalPaginas;
+
+            contenedorCards.innerHTML = '';
+
+            if (filtradas.length === 0) {
+                contenedorCards.innerHTML = '<div class="sin-resultados">No se encontraron especies que coincidan con tu búsqueda.</div>';
+                contenedorPaginacion.innerHTML = '';
+                return;
+            }
+
+            const inicio = (paginaActual - 1) * porPagina;
+            const especiesPagina = filtradas.slice(inicio, inicio + porPagina);
+            especiesPagina.forEach(especie => contenedorCards.appendChild(crearCard(especie)));
+
+            renderizarPaginacion(totalPaginas);
+        }
+
+        function renderizarPaginacion(totalPaginas) {
+            contenedorPaginacion.innerHTML = '';
+
+            const btnAnterior = document.createElement('button');
+            btnAnterior.className = 'pagina-btn';
+            btnAnterior.innerHTML = '«';
+            btnAnterior.disabled = paginaActual === 1;
+            btnAnterior.addEventListener('click', () => { paginaActual--; renderizar(); });
+            contenedorPaginacion.appendChild(btnAnterior);
+
+            for (let i = 1; i <= totalPaginas; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'pagina-btn' + (i === paginaActual ? ' activo' : '');
+                btn.textContent = i;
+                btn.addEventListener('click', () => { paginaActual = i; renderizar(); });
+                contenedorPaginacion.appendChild(btn);
+            }
+
+            const btnSiguiente = document.createElement('button');
+            btnSiguiente.className = 'pagina-btn';
+            btnSiguiente.innerHTML = '»';
+            btnSiguiente.disabled = paginaActual === totalPaginas;
+            btnSiguiente.addEventListener('click', () => { paginaActual++; renderizar(); });
+            contenedorPaginacion.appendChild(btnSiguiente);
+        }
+
+        // ---- Eventos ----
+        campoBusqueda.addEventListener('input', (e) => {
+            textoBusqueda = normalizar(e.target.value.trim());
+            paginaActual = 1;
+            renderizar();
+        });
+
+        botonesFiltro.forEach(boton => {
+            boton.addEventListener('click', () => {
+                botonesFiltro.forEach(b => b.classList.remove('activo'));
+                boton.classList.add('activo');
+                filtroActivo = boton.dataset.filtro;
+                paginaActual = 1;
+                renderizar();
+            });
+        });
+
+        // ---- Render inicial ----
+        renderizar();
+    </script>
+</body>
