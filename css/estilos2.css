@@ -91,13 +91,14 @@ small, .texto-secundario {
 }
 
 /* Foco visible — criterio 2.4.7 y 2.4.11 (AA). NO quitar el outline.
-   Anillo doble (blanco + azul-marino): así siempre hay 3:1 de contraste
-   contra el fondo, sea claro u oscuro. #39FF14 se descartó porque da
-   ~1.23:1 contra --fondo-principal (falla 1.4.11). */
+   Anillo doble: verde fosforescente pegado al control (máxima
+   visibilidad sobre fondos oscuros) + anillo azul-marino por fuera
+   (garantiza 3:1 sobre fondos claros, donde el verde solo no alcanza
+   ~1.23:1 contra --fondo-principal). */
 :focus-visible {
     outline: 3px solid var(--azul-marino);
-    outline-offset: 2px;
-    box-shadow: 0 0 0 2px #fff, 0 0 0 5px var(--azul-marino);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px #39FF14;
 }
 
 /* Respeto a preferencia de reducir movimiento — req. 6.5 */
