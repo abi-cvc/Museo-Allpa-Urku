@@ -205,6 +205,7 @@ small,
 /* header - icons --------------------------------------------------------*/
 .header-icons {
     display: flex;
+    justify-content: flex-end;
     gap: 8px;
     background-color: var(--azul-glaciar);
     padding: 10px;
@@ -225,8 +226,8 @@ small,
 /*Barra de navegación--------------------------------------------------------*/
 .nav-menu {
     display: flex;
+    padding: 0 10px;
     justify-content: space-between;
-    padding: 10px;
     align-items: center;
     margin: 0;
 }
@@ -239,11 +240,21 @@ small,
 }
 
 .nav-menu img {
-    width: 8%;
-    height: 8%;
+    height: 64px;
+    width: auto;
 }
 
-.nav-menu a:hover {
+/* Separación extra entre el logo y los enlaces, solo cuando caben
+   en una sola fila (por debajo de 1121px el nav se envuelve y centra,
+   ver @media max-width:1120px, donde este espacio extra no aplica). */
+@media (min-width: 1121px) {
+    .nav-menu img {
+        margin-right: 40px;
+    }
+}
+
+.nav-menu a:hover,
+.nav-menu a[aria-current="page"] {
     background-color: var(--dorado);
 }
 
@@ -252,6 +263,7 @@ small,
 /* Contenedor inicial--------------------------------------------------------*/
 .contenedor-inicial {
     background: var(--azul-marino);
+    padding-top: 40px;
 }
 
 .contenedor-inicial img {
@@ -261,11 +273,13 @@ small,
 }
 
 .contenedor-inicial .kicker {
+    width: fit-content;
     text-align: center;
     color: var(--azul-glaciar);
-    padding: 20px;
-    margin: 20px;
-    border: var(--azul-glaciar);
+    padding: 8px 20px;
+    margin: 0 auto 20px;
+    border: 1px solid var(--azul-glaciar);
+    border-radius: 20px;
 }
 
 /* El h1 hereda el tamaño/peso que antes tenía el h2 del hero
@@ -277,6 +291,11 @@ small,
     text-align: center;
 }
 
+/* Palabra o frase clave resaltada dentro de un título del hero */
+.acento {
+    color: var(--dorado);
+}
+
 .contenedor-inicial .subtitulo {
     color: var(--azul-glaciar);
     text-align: center;
@@ -285,10 +304,12 @@ small,
 
 
 .tarjetas-inicio {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 30px;
 }
 
 .tarjetas-inicio a {
@@ -296,12 +317,9 @@ small,
     border: solid 1px var(--blanco-niebla);
     color: var(--blanco-niebla);
     text-align: center;
-
-    margin: 0 30px 30px 30px;
     border-radius: 20px;
     padding: 10px;
     width: 200px;
-    align-items: center;
 }
 
 .tarjetas-inicio a:hover {
@@ -324,26 +342,45 @@ small,
 }
 
 .card-especie {
-    border: solid 3px var(--azul-marino);
+    border: 1px solid var(--azul-glaciar);
     border-radius: 15px;
     margin: 20px;
+    overflow: hidden;
+    background: var(--fondo-principal);
+    box-shadow: 0 2px 8px rgba(13, 43, 69, 0.12);
+    transition: box-shadow .2s ease, transform .2s ease;
 }
 
+.card-especie:hover {
+    box-shadow: 0 6px 16px rgba(13, 43, 69, 0.18);
+    transform: translateY(-2px);
+}
+
+/* Alto fijo + recorte desde arriba: las fotos de fauna suelen tener
+   la cabeza/rasgo principal cerca del borde superior, así que se
+   prioriza esa zona en vez de recortar desde el centro. */
 .card-especie img {
     width: 100%;
-    border: solid 0 0 0 2px var(--azul-marino);
-
+    height: 210px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
 }
 
 
-.card-especie h3 {
+.card-especie > h3 {
     font-size: var(--tam-h3);
-    margin-top: 5px;
+    margin-top: 16px;
     margin-left: 10px;
     margin-bottom: 0;
 }
 
-.card-especie p {
+.card-especie .badge-estado {
+    width: fit-content;
+    margin: 4px 0 12px 10px;
+}
+
+.card-especie > p {
     font-size: var(--tam-h4);
     margin-top: 5px;
     margin-left: 10px;
@@ -546,8 +583,8 @@ small,
 
 .eslogan {
     color: var(--texto-principal);
-    font-family: "Italianno";
-    font-size: var(--tam-h3);
+    font-family: "Italianno", cursive;
+    font-size: 2rem;
     text-align: left;
 
 }
@@ -606,12 +643,11 @@ footer a {
     }
 
     .tarjetas-inicio {
-        grid-template-columns: 1fr;
+        flex-direction: column;
     }
 
     .tarjetas-inicio a {
         width: 100%;
-        margin: 12px 0;
     }
 
     .coleccion-cards {
@@ -1259,28 +1295,15 @@ footer a {
     gap: 4px;
 }
 
-.card-especie {
-    border: solid 3px var(--azul-marino);
-    border-radius: 15px;
-    margin: 20px;
-    background: #fff;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-especie img {
-    width: 100%;
+#contenedorCards .card-especie img {
     height: 170px;
-    object-fit: cover;
-    display: block;
 }
 
 .card-especie .contenido {
     padding: 0 10px 10px;
 }
 
-.card-especie h3 {
+.card-especie .contenido h3 {
     font-size: var(--tam-h3);
     margin-top: 8px;
     margin-left: 0;
@@ -1321,6 +1344,11 @@ footer a {
 .badge-estado.preocupacion-menor {
     background: #e3edfb;
     color: #2b5faa;
+}
+
+.badge-estado.endemica {
+    background: #dcf2e2;
+    color: #1b6e37;
 }
 
 .card-especie p.descripcion {

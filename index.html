@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&family=Italianno&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
@@ -29,7 +29,7 @@
 
     <nav class="nav-menu">
         <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
-        <a href="index.html">Inicio</a>
+        <a href="index.html" aria-current="page">Inicio</a>
         <a href="nosotros.html">Sobre el museo</a>
         <a href="paramo.html">El Páramo</a>
         <a href="colecciones.html">Colección</a>
@@ -40,7 +40,7 @@
     <main id="main">
         <section class="contenedor-inicial">
             <p class="kicker">ECOSISTEMAS DE ALTA MONTAÑA ECUATORIANA</p>
-            <h1>Descubre la vida que nace sobre las nubes</h1>
+            <h1>Descubre la vida que nace sobre las <span class="acento">nubes</span></h1>
             <p class="subtitulo">El páramo andino es uno de los ecosistemas más frágiles y vitales del planeta. Explóralo, conócelo, protégelo.</p>
             <div class="tarjetas-inicio">
                 <a href="visitas.html">Planifica tu visita</a>
@@ -60,20 +60,22 @@
                 <section class="card-especie">
                     <img src="recursos/inicio/CondorAndino.png" alt="Foto Cóndor andino">
                     <h3>Cóndor andino</h3>
-                    <p>vultur grypus</p>
+                    <p class="cientifico">Vultur gryphus</p>
+                    <span class="badge-estado">Vulnerable</span>
                 </section>
 
                 <section class="card-especie">
                     <img src="recursos/inicio/Frailejon.png" alt="Foto Frailejón">
                     <h3>Frailejón</h3>
-                    <p>Espeletia pycnophylla</p>
+                    <p class="cientifico">Espeletia pycnophylla</p>
+                    <span class="badge-estado endemica">Endémica</span>
                 </section>
 
                 <section class="card-especie">
                     <img src="recursos/inicio/RanaMarsupialAndina.png" alt="Foto Rana marsupial andina">
                     <h3>Rana marsupial andina</h3>
-                    <p>Gastrotheca riobambae</p>
-
+                    <p class="cientifico">Gastrotheca riobambae</p>
+                    <span class="badge-estado en-peligro">En peligro</span>
                 </section>
 
             </div>
