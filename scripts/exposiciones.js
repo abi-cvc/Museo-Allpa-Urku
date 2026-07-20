@@ -46,3 +46,16 @@ tabs.forEach((tab, indice) => {
     });
 
 });
+
+// Enlaces como "Comprar entradas" apuntan a exposiciones.html#panel-comprar
+// (desde esta misma página o desde index.html). Sin esto, el panel de
+// destino existe pero está con `hidden`, así que el enlace no mostraba nada.
+function activarPestañaDesdeHash() {
+    if (!location.hash) return;
+    const idPanel = location.hash.slice(1);
+    const tabDestino = tabs.find(tab => tab.getAttribute("aria-controls") === idPanel);
+    if (tabDestino) activarPestaña(tabDestino);
+}
+
+window.addEventListener("hashchange", activarPestañaDesdeHash);
+activarPestañaDesdeHash();

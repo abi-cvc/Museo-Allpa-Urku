@@ -1553,9 +1553,11 @@ footer a {
     font-size: var(--tam-small);
 }
 
-.exposicion-destacada footer button {
+.exposicion-destacada footer a {
+    display: inline-block;
     background-color: var(--fondo-principal);
     color: var(--texto-principal);
+    text-decoration: none;
     border: none;
     padding: 0.5rem 1.5rem;
     border-radius: 4px;
@@ -1566,11 +1568,11 @@ footer a {
     font-family: var(--fuente-cuerpo);
 }
 
-.exposicion-destacada footer button:hover {
+.exposicion-destacada footer a:hover {
     opacity: 0.7;
 }
 
-.exposicion-destacada footer button:active {
+.exposicion-destacada footer a:active {
     transform: scale(0.98);
 }
 
@@ -1658,7 +1660,7 @@ footer a {
         gap: 0.75rem;
     }
 
-    .exposicion-destacada footer button {
+    .exposicion-destacada footer a {
         width: 100%;
         text-align: center;
     }
@@ -2176,4 +2178,123 @@ footer a {
     .grupo-entrada .input-wrapper input[type="number"] {
         width: 70px;
     }
+}
+
+/* Formulario de contacto (contacto.html) — antes vivía en un
+   estilos2.css aparte; se integra aquí escopado bajo .contenedor-contacto
+   para no afectar los <button>/<input>/<label>/<fieldset> de otras
+   páginas (colecciones, paramo, exposiciones, etc.) que comparten
+   este mismo estilos.css. -----------------------------------------*/
+.contenedor-contacto {
+    background: var(--fondo-gris);
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.contacto {
+    width: 100%;
+    max-width: 420px;
+    background: var(--fondo-principal);
+    border: 2px solid var(--azul-marino);
+    border-radius: 10px;
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.contenedor-contacto h1 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.contenedor-contacto fieldset {
+    border: none;
+}
+
+.contenedor-contacto .grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.contenedor-contacto label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contenedor-contacto input,
+.contenedor-contacto textarea {
+    padding: 12px;
+    border: 1px solid var(--azul-marino);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.contenedor-contacto textarea {
+    resize: vertical;
+}
+
+.contenedor-contacto .terminos {
+    margin: 25px 0;
+}
+
+.contenedor-contacto .check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: normal;
+}
+
+.contenedor-contacto button {
+    color: var(--blanco-niebla);
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--azul-marino);
+    cursor: pointer;
+}
+
+.contenedor-contacto .error {
+    color: #b00020;
+    font-size: .85rem;
+    margin-top: 5px;
+    min-height: 18px;
+}
+
+.contenedor-contacto .valido {
+    border: 2px solid #2e7d32;
+}
+
+.contenedor-contacto .invalido {
+    border: 2px solid #d32f2f;
+}
+
+@media (max-width: 500px) {
+    .contenedor-contacto {
+        padding: 24px 16px;
+    }
+
+    .contacto {
+        padding: 24px;
+    }
+}
+
+/* Páginas de texto simple: declaración de accesibilidad, política de
+   privacidad, términos de uso, visitas — todas reusan este wrapper. */
+.contenedor-declaracion {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    line-height: var(--interlineado-cuerpo);
+}
+
+.contenedor-declaracion h2 {
+    margin-top: 2rem;
+}
+
+.contenedor-declaracion ul {
+    padding-left: 1.25rem;
 }

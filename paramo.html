@@ -115,19 +115,19 @@
         <p>El páramo no es uniforme — se divide en zonas según la altitud, cada una con características y especies
             propias.</p>
         <section class="zonificacion-card">
-            <button type="button" class="tab-zona activa" data-zona="subparamo">
+            <button type="button" class="tab-zona activa" data-zona="subparamo" aria-pressed="true">
                 <p>Subpáramo · 3.000 - 3.500m</p>
             </button>
-            <button type="button" class="tab-zona" data-zona="paramo">
+            <button type="button" class="tab-zona" data-zona="paramo" aria-pressed="false">
                 <p>Páramo · 3.500 - 4.200m</p>
             </button>
-            <button type="button" class="tab-zona" data-zona="superparamo">
+            <button type="button" class="tab-zona" data-zona="superparamo" aria-pressed="false">
                 <p>Superpáramo · 3.000 - 3.500m</p>
             </button>
         </section>
 
 
-        <section class="zonificacion-detalle">
+        <section class="zonificacion-detalle" aria-live="polite">
             <div class="zonificacion-detalle__cabecera">
                 <span class="zonificacion-badge" data-campo="rango">3.000 – 3.500 msnm</span>
                 <h3 data-campo="nombre">Subpáramo</h3>
@@ -273,8 +273,12 @@
 
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('activa'));
+                    tabs.forEach(t => {
+                        t.classList.remove('activa');
+                        t.setAttribute('aria-pressed', 'false');
+                    });
                     tab.classList.add('activa');
+                    tab.setAttribute('aria-pressed', 'true');
                     pintar(tab.dataset.zona);
                 });
             });

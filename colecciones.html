@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&family=Italianno&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
@@ -32,7 +32,7 @@
         <a href="index.html">Inicio</a>
         <a href="nosotros.html">Sobre el museo</a>
         <a href="paramo.html">El Páramo</a>
-        <a href="colecciones.html">Colección</a>
+        <a href="colecciones.html" aria-current="page">Colección</a>
         <a href="exposiciones.html">Exposiciones</a>
         <a href="contacto.html">Contacto</a>
     </nav>
@@ -67,10 +67,10 @@
                     </svg>
                     Filtrar por:
                 </span>
-                <button class="filtro-btn activo" data-filtro="todas">Todas</button>
-                <button class="filtro-btn" data-filtro="fauna">Fauna</button>
-                <button class="filtro-btn" data-filtro="flora">Flora</button>
-                <button class="filtro-btn" data-filtro="peligro">En Peligro</button>
+                <button class="filtro-btn activo" data-filtro="todas" aria-pressed="true">Todas</button>
+                <button class="filtro-btn" data-filtro="fauna" aria-pressed="false">Fauna</button>
+                <button class="filtro-btn" data-filtro="flora" aria-pressed="false">Flora</button>
+                <button class="filtro-btn" data-filtro="peligro" aria-pressed="false">En Peligro</button>
             </section>
 
             <h2 class="oculto">Resultados de la colección</h2>
@@ -291,7 +291,7 @@
 
             const btnAnterior = document.createElement('button');
             btnAnterior.className = 'pagina-btn';
-            btnAnterior.innerHTML = '«';
+            btnAnterior.innerHTML = '<span class="oculto">Página anterior</span><span aria-hidden="true">«</span>';
             btnAnterior.disabled = paginaActual === 1;
             btnAnterior.addEventListener('click', () => { paginaActual--; renderizar(); });
             contenedorPaginacion.appendChild(btnAnterior);
@@ -300,13 +300,14 @@
                 const btn = document.createElement('button');
                 btn.className = 'pagina-btn' + (i === paginaActual ? ' activo' : '');
                 btn.textContent = i;
+                if (i === paginaActual) btn.setAttribute('aria-current', 'page');
                 btn.addEventListener('click', () => { paginaActual = i; renderizar(); });
                 contenedorPaginacion.appendChild(btn);
             }
 
             const btnSiguiente = document.createElement('button');
             btnSiguiente.className = 'pagina-btn';
-            btnSiguiente.innerHTML = '»';
+            btnSiguiente.innerHTML = '<span class="oculto">Página siguiente</span><span aria-hidden="true">»</span>';
             btnSiguiente.disabled = paginaActual === totalPaginas;
             btnSiguiente.addEventListener('click', () => { paginaActual++; renderizar(); });
             contenedorPaginacion.appendChild(btnSiguiente);
@@ -321,8 +322,12 @@
 
         botonesFiltro.forEach(boton => {
             boton.addEventListener('click', () => {
-                botonesFiltro.forEach(b => b.classList.remove('activo'));
+                botonesFiltro.forEach(b => {
+                    b.classList.remove('activo');
+                    b.setAttribute('aria-pressed', 'false');
+                });
                 boton.classList.add('activo');
+                boton.setAttribute('aria-pressed', 'true');
                 filtroActivo = boton.dataset.filtro;
                 paginaActual = 1;
                 renderizar();

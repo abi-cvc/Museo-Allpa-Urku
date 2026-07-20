@@ -78,8 +78,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const mensajeError = document.createElement('div');
         mensajeError.className = 'mensaje-error';
         mensajeError.id = `error-${input.id}`;
+        mensajeError.setAttribute('aria-live', 'polite');
         input.parentNode.insertBefore(mensajeError, input.nextSibling);
-        
+        input.setAttribute('aria-describedby', mensajeError.id);
+
         // Validación en tiempo real
         input.addEventListener('input', function() {
             validarCampo(this);
@@ -106,15 +108,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!validaciones[id]) {
             // Si no hay validación definida, solo limpiar errores
             input.classList.remove('error', 'success');
+            input.removeAttribute('aria-invalid');
             if (mensajeError) mensajeError.classList.remove('visible');
             return true;
         }
-        
+
         const resultado = validaciones[id].validar(valor);
-        
+
         if (!resultado.valido) {
             input.classList.add('error');
             input.classList.remove('success');
+            input.setAttribute('aria-invalid', 'true');
             if (mensajeError) {
                 mensajeError.textContent = resultado.mensaje;
                 mensajeError.classList.add('visible');
@@ -123,7 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             input.classList.remove('error');
             input.classList.add('success');
+            input.setAttribute('aria-invalid', 'false');
             if (mensajeError) {
+                mensajeError.textContent = '';
                 mensajeError.classList.remove('visible');
             }
             return true;
@@ -145,18 +151,23 @@ document.addEventListener('DOMContentLoaded', function() {
         if (formularioValido) {
             // Mostrar mensaje de éxito
             const boton = form.querySelector('button[type="submit"]');
+            const estadoReserva = document.getElementById('estadoReserva');
             const textoOriginal = boton.textContent;
             boton.textContent = '✓ ¡Reserva confirmada!';
             boton.style.backgroundColor = '#27ae60';
             boton.disabled = true;
-            
+            if (estadoReserva) {
+                estadoReserva.textContent = 'Reserva confirmada. Te contactaremos pronto para completar el pago.';
+            }
+
             // Resetear después de 3 segundos
             setTimeout(() => {
                 boton.textContent = textoOriginal;
                 boton.style.backgroundColor = '';
                 boton.disabled = false;
+                if (estadoReserva) estadoReserva.textContent = '';
             }, 3000);
-            
+
             // Aquí podrías enviar el formulario o mostrar un modal
             console.log('Formulario válido - Enviando datos...');
         } else {
