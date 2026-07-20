@@ -39,10 +39,12 @@ La estructura del sitio está pensada para ofrecer una navegación clara, una le
 - `contacto.html`
 - `declaracion-acc.html`
 - `css/estilos.css`
-- `css/estilos2.css`
+- `css/accesibilidad.css`
 - `scripts/exposiciones.js`
 - `scripts/validacionAutomatica.js`
 - `scripts/validacionAutomaticaEntradas.js`
+- `scripts/accesibilidad.js`
+- `scripts/asistenteVoz.js`
 - `recursos/`
 - `docs/`
 
@@ -52,13 +54,15 @@ El sitio incorpora varias prácticas alineadas con WCAG 2.2, entre ellas:
 
 - enlace de salto al contenido principal
 - foco visible para navegación con teclado
-- respeto a la preferencia de reducción de movimiento
+- respeto a la preferencia de reducción de movimiento (y un interruptor manual equivalente)
 - uso de etiquetas semánticas y jerarquía de contenidos
-- mensajes de error asociados a formularios
-- atributos ARIA en secciones interactivas y paneles
+- mensajes de error asociados a formularios, anunciados a lectores de pantalla
+- atributos ARIA de estado y relación en secciones interactivas y paneles (nunca `aria-label` donde el HTML semántico alcanza)
 - contenido pensado para escalar correctamente con zoom
+- panel de opciones de accesibilidad (tamaño de texto, alto contraste, espaciado de lectura amplio, reducir animaciones), con preferencias guardadas entre páginas
+- lectura de la página en voz alta mediante la Web Speech API
 
-Importante: la conformidad total con WCAG 2.2 requiere validación manual adicional. Aún existen elementos pendientes de ajuste, como enlaces temporales, la página de declaración de accesibilidad y algunos recursos multimedia sin subtítulos o transcripción.
+Importante: la conformidad total con WCAG 2.2 requiere validación manual adicional. Aún existen elementos pendientes de ajuste, como algunos recursos multimedia sin subtítulos o transcripción — ver `declaracion-acc.html` para el detalle actualizado.
 
 ## Cómo ejecutar el proyecto
 
