@@ -1,0 +1,216 @@
+/* ============================================
+   Botones de ícono del header (micrófono / accesibilidad)
+   Antes eran <a href="#">, ahora son <button> reales.
+   ============================================ */
+.header-icons button {
+    background: none;
+    border: none;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    min-height: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.header-icons button img {
+    width: 20px;
+    height: 20px;
+}
+
+.header-icons button[aria-pressed="true"] {
+    background: var(--dorado);
+}
+
+/* ============================================
+   Panel de opciones de accesibilidad (<dialog>)
+   ============================================ */
+#panelAccesibilidad {
+    border: none;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 360px;
+    width: calc(100% - 40px);
+    box-shadow: 0 10px 40px rgba(13, 43, 69, 0.35);
+    color: var(--texto-principal);
+    font-family: var(--fuente-cuerpo);
+}
+
+#panelAccesibilidad::backdrop {
+    background: rgba(13, 43, 69, 0.55);
+}
+
+.accesibilidad-panel-cuerpo {
+    padding: 24px;
+}
+
+.accesibilidad-panel-cuerpo h2 {
+    margin-top: 0;
+    font-size: var(--tam-h3);
+}
+
+.accesibilidad-grupo {
+    border: none;
+    margin: 0 0 20px;
+    padding: 0;
+}
+
+.accesibilidad-etiqueta {
+    font-weight: var(--peso-medio);
+    font-size: var(--tam-small);
+    color: var(--texto-suave);
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+.accesibilidad-botones-texto {
+    display: flex;
+    gap: 8px;
+}
+
+.accesibilidad-botones-texto button {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--azul-marino);
+    border-radius: 8px;
+    background: var(--fondo-principal);
+    color: var(--azul-marino);
+    cursor: pointer;
+    font-weight: var(--peso-medio);
+    font-family: var(--fuente-cuerpo);
+}
+
+.accesibilidad-botones-texto button[aria-pressed="true"] {
+    background: var(--azul-marino);
+    color: var(--blanco-niebla);
+}
+
+.accesibilidad-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 4px 0;
+    font-weight: var(--peso-normal);
+}
+
+.accesibilidad-switch input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.accesibilidad-panel-acciones {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--fondo-gris);
+}
+
+.accesibilidad-panel-acciones button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: var(--peso-medio);
+    font-family: var(--fuente-cuerpo);
+}
+
+#botonRestablecerAccesibilidad {
+    background: none;
+    border: 1px solid var(--azul-marino);
+    color: var(--azul-marino);
+}
+
+#botonCerrarAccesibilidad {
+    background: var(--azul-marino);
+    border: 1px solid var(--azul-marino);
+    color: var(--blanco-niebla);
+}
+
+/* ============================================
+   Estados de accesibilidad — se activan/desactivan
+   desde el panel y persisten via localStorage
+   ============================================ */
+
+/* Tamaño de texto: reescala los mismos tokens que ya usa
+   todo el sitio, así no hace falta tocar cada componente. */
+html.accesibilidad-texto-grande {
+    --tam-h1: 2.875rem;
+    --tam-h2: 2.3rem;
+    --tam-h3: 1.725rem;
+    --tam-h4: 1.4375rem;
+    --tam-base: 1.15rem;
+    --tam-small: 1rem;
+}
+
+html.accesibilidad-texto-mas-grande {
+    --tam-h1: 3.25rem;
+    --tam-h2: 2.6rem;
+    --tam-h3: 1.95rem;
+    --tam-h4: 1.625rem;
+    --tam-base: 1.3rem;
+    --tam-small: 1.125rem;
+}
+
+/* Alto contraste: negro/blanco puro para el texto principal
+   (ya pasaba AA, pero un modo de "alto contraste" debe superar
+   el mínimo, no solo cumplirlo) + corrige el único par del
+   sitio que estaba por debajo de AAA (kicker/subtítulo del
+   hero: azul-glaciar sobre azul-marino, 4.56:1 → celeste-claro
+   sobre azul-marino, 7.77:1) + bordes más gruesos. */
+html.accesibilidad-alto-contraste {
+    --texto-principal: #000000;
+    --texto-suave: #000000;
+    --fondo-principal: #ffffff;
+    --fondo-gris: #ffffff;
+}
+
+html.accesibilidad-alto-contraste .contenedor-inicial .kicker,
+html.accesibilidad-alto-contraste .contenedor-inicial .subtitulo {
+    color: #93C6D2;
+}
+
+html.accesibilidad-alto-contraste .card-especie,
+html.accesibilidad-alto-contraste input,
+html.accesibilidad-alto-contraste select,
+html.accesibilidad-alto-contraste textarea {
+    border-width: 2px;
+}
+
+/* Espaciado de lectura amplio — criterio 1.4.12, valores por
+   encima del mínimo exigido (interlineado ≥1.5, espaciado de
+   palabra ≥0.16em) para quienes lo necesiten más holgado. */
+html.accesibilidad-espaciado-lectura body {
+    line-height: 2;
+    letter-spacing: 0.02em;
+    word-spacing: 0.16em;
+}
+
+html.accesibilidad-espaciado-lectura p {
+    margin-bottom: 1.5em;
+}
+
+/* Reducir animaciones — mismo efecto que prefers-reduced-motion
+   del sistema operativo, pero activable manualmente. */
+html.accesibilidad-movimiento-reducido *,
+html.accesibilidad-movimiento-reducido *::before,
+html.accesibilidad-movimiento-reducido *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+@media (max-width: 500px) {
+    #panelAccesibilidad {
+        max-width: none;
+        width: calc(100% - 24px);
+    }
+
+    .accesibilidad-panel-cuerpo {
+        padding: 20px;
+    }
+}

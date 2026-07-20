@@ -12,6 +12,20 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/accesibilidad.css">
+    <script>
+        (function () {
+            try {
+                var p = JSON.parse(localStorage.getItem('accesibilidad-preferencias') || '{}');
+                var c = document.documentElement.classList;
+                if (p.texto === 'grande') c.add('accesibilidad-texto-grande');
+                if (p.texto === 'mas-grande') c.add('accesibilidad-texto-mas-grande');
+                if (p.contraste) c.add('accesibilidad-alto-contraste');
+                if (p.espaciado) c.add('accesibilidad-espaciado-lectura');
+                if (p.movimiento) c.add('accesibilidad-movimiento-reducido');
+            } catch (e) { }
+        })();
+    </script>
 </head>
 
 <body>
@@ -20,12 +34,58 @@
             <a href="#main"> ↓ Saltar a contenido principal</a>
         </section>
         <section class="header-icons">
-            <a href="#"><img src="/recursos/icons/microphone.svg" alt="Asistente por voz"></a>
-            <a href="#"><img src="/recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad"></a>
+            <button type="button" id="botonAsistenteVoz" aria-pressed="false">
+                <img src="/recursos/icons/microphone.svg" alt="" aria-hidden="true">
+                <span class="oculto" id="etiquetaAsistenteVoz">Leer página en voz alta</span>
+            </button>
+            <button type="button" id="botonAccesibilidad" aria-haspopup="dialog">
+                <img src="/recursos/icons/icon_accesibilidad.svg" alt="Opciones de accesibilidad">
+            </button>
             <!-- Aquí especificar idioma -->
         </section>
 
     </header>
+
+    <dialog id="panelAccesibilidad" aria-labelledby="tituloPanelAccesibilidad">
+        <div class="accesibilidad-panel-cuerpo">
+            <h2 id="tituloPanelAccesibilidad">Opciones de accesibilidad</h2>
+
+            <fieldset class="accesibilidad-grupo">
+                <legend class="accesibilidad-etiqueta">Tamaño de texto</legend>
+                <div class="accesibilidad-botones-texto">
+                    <button type="button" data-texto="normal" aria-pressed="true">A</button>
+                    <button type="button" data-texto="grande" aria-pressed="false">A+</button>
+                    <button type="button" data-texto="mas-grande" aria-pressed="false">A++</button>
+                </div>
+            </fieldset>
+
+            <div class="accesibilidad-grupo">
+                <label class="accesibilidad-switch">
+                    <input type="checkbox" id="toggleContraste">
+                    Alto contraste
+                </label>
+            </div>
+
+            <div class="accesibilidad-grupo">
+                <label class="accesibilidad-switch">
+                    <input type="checkbox" id="toggleEspaciado">
+                    Espaciado de lectura amplio
+                </label>
+            </div>
+
+            <div class="accesibilidad-grupo">
+                <label class="accesibilidad-switch">
+                    <input type="checkbox" id="toggleMovimiento">
+                    Reducir animaciones
+                </label>
+            </div>
+
+            <div class="accesibilidad-panel-acciones">
+                <button type="button" id="botonRestablecerAccesibilidad">Restablecer</button>
+                <button type="button" id="botonCerrarAccesibilidad">Cerrar</button>
+            </div>
+        </div>
+    </dialog>
 
     <nav class="nav-menu">
         <img src="/recursos/logo-museo.svg" alt="Logo del Museo Allpa Urku" class="logo">
@@ -179,6 +239,8 @@
     </footer>
 
     <script src="scripts/validacionAutomatica.js"></script>
+    <script src="scripts/accesibilidad.js"></script>
+    <script src="scripts/asistenteVoz.js"></script>
 </body>
 
 </html>
